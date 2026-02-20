@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMSSA · About – African Maritime Safety & Security Agency</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background: #f5f9ff;
+      color: #102b41;
+      line-height: 1.5;
+    }
+
+    .glass-nav {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.7);
+      position: sticky;
+      top: 0;
+      z-index: 60;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0.5rem 2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .logo-image a {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .logo-avif {
+      width: 80px;         
+      height: 100px;         
+      border-radius: 5px;
+      background-image: url('amssalogo.avif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0 10px 20px -8px #e0dfdf;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 2.2rem;     
+      letter-spacing: -0.5px;
+      background: linear-gradient(140deg, #0d314b, #285f8b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      font-weight: 550;
+      color: #0c334e;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #0c334e;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover {
+      color: #1d6190;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background: white;
+      padding: 0.5rem 1.6rem;
+      border-radius: 40px;
+      font-weight: 600;
+      box-shadow: 0 8px 14px -10px #0b2f48;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    .dropbtn:hover {
+      background: #f0f7ff;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 45px;
+      background: white;
+      min-width: 180px;
+      border-radius: 24px;
+      box-shadow: 0 20px 30px -12px #082436;
+      z-index: 70;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .dropdown-content.show {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: #0b314b;
+      padding: 0.9rem 1.5rem;
+      text-decoration: none;
+      display: block;
+      font-weight: 500;
+      border-bottom: 1px solid #e9f0f8;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+      background: #e3f0fd;
+      color: #005c99;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: #0c334e;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      left: -320px;
+      width: 280px;
+      height: 100vh;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(12px);
+      z-index: 200;
+      padding: 2rem 1.5rem;
+      box-shadow: 4px 0 30px -10px #031d30;
+      transition: left 0.3s ease;
+      border-right: 2px solid white;
+    }
+
+    .mobile-nav.open {
+      left: 0;
+    }
+
+    .mobile-nav-close {
+      text-align: right;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      cursor: pointer;
+      color: #0c334e;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .mobile-nav-links a {
+      text-decoration: none;
+      color: #0c334e;
+      font-size: 1.3rem;
+      font-weight: 500;
+      border-bottom: 1px solid #c6dcf2;
+      padding-bottom: 0.6rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav-links .dropdown-mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .dropdown-mobile .drop-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #0c334e;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .dropdown-mobile .mobile-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-left: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .dropdown-mobile .mobile-submenu.show {
+      display: flex;
+    }
+
+    .dropdown-mobile .mobile-submenu a {
+      padding-left: 0.5rem;
+      font-size: 1.1rem;
+      border-bottom: none;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.3);
+      z-index: 150;
+    }
+
+    .overlay.show {
+      display: block;
+    }
+
+    .floating-social {
+      position: fixed;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 100;
+    }
+
+    .social-btn {
+      width: 54px;
+      height: 54px;
+      background: white;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px -8px #0b2d47;
+      color: #0c3f63;
+      font-size: 1.7rem;
+      transition: 0.2s;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.7);
+    }
+
+    .social-btn:hover {
+      background: #0c3f63;
+      color: white;
+      transform: scale(1.15);
+    }
+
+    /* about specific styles */
+    .about-hero {
+      background: linear-gradient(97deg, #092d48, #235c86);
+      padding: 3rem 2rem;
+      border-radius: 0 0 3rem 3rem;
+      color: white;
+      margin-bottom: 2rem;
+      box-shadow: 0 20px 30px -12px #0b334e;
+    }
+
+    .about-hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .about-hero p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      opacity: 0.95;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: 5rem 0 2rem;
+      color: #0a2d47;
+      border-left: 10px solid #246792;
+      padding-left: 1.5rem;
+    }
+
+    .president-card {
+      border-radius: 2.8rem;
+      padding: 2rem 2rem 0.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      margin: 3rem 0;
+    }
+
+    .president-figure {
+      flex: 0 0 260px;
+      text-align: center;
+    }
+
+    .president-img {
+      width: 100%;
+      height: 280px;
+      border-radius: 1.5rem;
+      background-image: url('images/magnus.avif'); 
+      background-size: cover;
+      background-position: center;
+      border: 4px solid white;
+      box-shadow: 0 18px 25px -15px #0f314b;
+      margin-bottom: 1rem;
+    }
+
+    .president-caption {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #0b3c60;
+      line-height: 1.3;
+    }
+
+    .president-caption span {
+      display: block;
+      font-weight: 500;
+      font-size: 1.1rem;
+      color: #346f9b;
+      margin-top: 0.25rem;
+    }
+
+    .president-bio {
+      flex: 1;
+      font-size: 1.2rem;
+      color: #1d3f5b;
+      border-left: 4px solid #1f6da0;
+      padding-left: 2rem;
+    }
+
+    .president-bio p {
+      margin-bottom: 1rem;
+    }
+
+    .team-group-img {
+      width: 100%;
+      height: 450px;
+      background-image: url('images/amssateam.avif');
+      background-size: cover;
+      background-position: center 30%;
+      border-radius: 1rem;
+      margin: 2.5rem 0;
+      border: 1px solid white;
+    }
+
+    /* pillars */
+    .pillars-plain {
+      background: linear-gradient(145deg, #e3f0fa 0%, #cde3f5 100%);
+      border-radius: 4rem;
+      padding: 3rem 2.5rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .pillar-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.8rem;
+      padding: 1rem 0;
+      border-bottom: 2px solid rgba(32, 96, 144, 0.25);
+    }
+
+    .pillar-item:last-child {
+      border-bottom: none;
+    }
+
+    .pillar-index {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1;
+      color: #1d5d8e;
+      opacity: 0.45;
+      min-width: 70px;
+      text-align: right;
+      letter-spacing: -2px;
+    }
+
+    .pillar-content {
+      flex: 1;
+    }
+
+    .pillar-content h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0a314b;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .pillar-content h3 i {
+      color: #206397;
+      font-size: 2rem;
+      background: rgba(255,255,255,0.5);
+      padding: 0.3rem;
+      border-radius: 50%;
+    }
+
+    .pillar-content p {
+      font-size: 1.2rem;
+      color: #163f5d;
+      max-width: 850px;
+      line-height: 1.5;
+    }
+
+    .numbered-list {
+      background: #e1effb;
+      border-radius: 3.5rem;
+      padding: 3rem;
+      margin: 3rem 0;
+      list-style: none;
+    }
+
+    .numbered-list li {
+      counter-increment: step-counter;
+      margin-bottom: 2rem;
+      font-size: 1.15rem;
+      padding-left: 3rem;
+      position: relative;
+      color: #0b314b;
+    }
+
+    .numbered-list li::before {
+      content: counter(step-counter);
+      background: #1b5d8f;
+      color: white;
+      font-weight: 700;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.9rem;
+    }
+
+    .numbered-list {
+      counter-reset: step-counter;
+    }
+
+    .footer-logo .logo-avif-small {
+      width: 80px; height: 100px;
+      background-image: url('amssalogo.avif');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .site-footer {
+      background: #092538;
+      color: #e0edfa;
+      padding: 3rem 2rem 1.5rem;
+      border-radius: 4rem 4rem 0 0;
+      margin-top: 3rem;
+    }
+
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+
+    .footer-logo-area { display: flex; flex-direction: column; }
+    .footer-logo a { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: white; }
+    .footer-logo span { font-size: 2rem; font-weight: 700; }
+
+    .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid #1f4767; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .footer-container { grid-template-columns: 1fr; }
+      .floating-social { display: none; }
+      .pillar-item { flex-direction: column; gap: 0.5rem; }
+      .pillar-index { text-align: left; }
+      .president-card { flex-direction: column; }
+      .president-bio { border-left: none; border-top: 4px solid #1f6da0; padding-left: 0; padding-top: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- floating social -->
+  <div class="floating-social">
+    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+
+  <!-- mobile overlay & nav -->
+  <div class="overlay" id="overlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-close" id="closeMobile"><i class="fas fa-times"></i></div>
+    <div class="mobile-nav-links">
+      <a href="about.html" class="mobile-about">About</a>
+      <a href="index.html#services-section">Services</a>
+      <a href="#">Operations</a>
+      <a href="#">Projects</a>
+      <a href="#">Library, News & Media</a>
+      <div class="dropdown-mobile">
+        <span class="drop-title" id="mobileMoreToggle"><i class="fas fa-globe"></i> More <i class="fas fa-chevron-down"></i></span>
+        <div class="mobile-submenu" id="mobileSubmenu">
+          <a href="default.html#contact-section"><i class="fas fa-envelope"></i> Contact Us</a>
+          <a href="membership.html"><i class="fas fa-user-plus"></i> Membership</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- desktop nav -->
+  <div class="glass-nav">
+    <nav class="container">
+      <div class="logo-image">
+        <a href="default.html">
+          <div class="logo-avif" role="img" aria-label="AMSSA logo"></div>
+          <span class="logo-text">AMSSA</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="about.html" style="font-weight:700; color:#1a5d93;">About</a>
+        <a href="default.html#services-section">Services</a>
+        <a href="#">Operations</a>
+        <a href="#">Projects</a>
+        <a href="#">Library, News & Media</a>
+        <div class="dropdown" id="desktopDropdown">
+          <button class="dropbtn" id="moreBtn"><i class="fas fa-globe"></i> More <i class="fas fa-chevron-down"></i></button>
+          <div class="dropdown-content" id="dropdownContent">
+            <a href="default.html#contact-section"><i class="fas fa-envelope"></i> Contact Us</a>
+            <a href="membership.html"><i class="fas fa-user-plus"></i> Membership</a>
+          </div>
+        </div>
+      </div>
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    </nav>
+  </div>
+
+  <!-- about page content -->
+  <div class="container" style="padding-top: 1.5rem;">
+    <div class="about-hero">
+      <h1>Historical Background of AMSSA</h1>
+      <p>African Maritime Safety and Security Agency – united for a safe, secure and sustainable maritime domain</p>
+    </div>
+
+    <!-- president card – with name & title under image (updated) -->
+    <div class="president-card">
+      <div class="president-figure">
+        <div class="president-img" title="President Mr Magnus Addico" style="background-image: url('images/magnus.avif');"></div>
+        <div class="president-caption">
+          Mr Magnus Addico
+          <span>President, AMSSA</span>
+        </div>
+      </div>
+      <div class="president-bio">
+        <p>The African Maritime Safety and Security Agency (AMSSA) was conceived in response to the growing need for a coordinated, continent-wide approach to maritime safety, security, and environmental protection in Africa. The idea for AMSSA was first formally discussed during the 3rd Assembly of the ICHCA Canaries-Africa Regional Charter Ports conference, held in Accra, Ghana, on 10–11 December 2007. This gathering brought together key maritime stakeholders from across Africa to address the increasing challenges posed by maritime threats, accidents, and the need for harmonized safety standards.</p>
+        <p style="margin-top:1rem;">AMSSA was officially established with Mr Magnus Addico the Secretary General of MOWCA in 2007, marking a significant step toward strengthening Africa’s maritime governance and capacity.</p>
+      </div>
+    </div>
+
+    <p style="font-size:1.2rem; margin: 2rem 0;">Its creation aligned with the African Union’s broader vision for integrated maritime strategy and regional cooperation, as outlined in the 2050 Africa’s Integrated Maritime Strategy (AIM Strategy). Since its inception, AMSSA has aimed to provide scientific, technical, and intelligence support to African Member States and maritime stakeholders, focusing on the safe, secure, and environmentally responsible movement of maritime transport and the prevention of loss of life at sea.</p>
+
+    <p style="font-size:1.2rem; margin: 2rem 0;">AMSSA’s development reflects Africa’s recognition of the strategic importance of its vast maritime domain, the need for robust crisis management and surveillance systems, and the value of harmonized training and operational protocols across the continent. Over the years, AMSSA has worked to advance these goals by fostering partnerships, supporting capacity building, and promoting best practices in maritime safety and security.</p>
+
+    <div class="team-group-img" title="AMSSA team"></div>
+
+    <!-- strategic direction -->
+    <h2 class="section-title" style="margin-top:4rem;">Strategic Direction</h2>
+    
+    <div style="background:white; border-radius:3rem; padding:2.5rem; margin:2rem 0;">
+      <h2 style="font-size:2.2rem; color:#0f3c5e;">AMSSA VISION STATEMENT</h2>
+      <p style="font-size:1.3rem; margin:1rem 0 2rem;"><strong>Vision</strong><br>To provide a robust scientific and intelligence platform for African Member States and maritime stakeholders, dedicated to ensuring the safe, secure, and environmentally responsible movement of maritime transport—while prioritising the prevention of the loss of human life at sea.</p>
+      <p style="font-size:1.3rem;"><strong>Mission</strong><br>AMSSA will lead the establishment and coordination of collaborative projects focused on African maritime safety, security, the protection of the marine environment, and the development of a sustainable Blue Economy. Through the development and integration of associated networks, AMSSA will:</p>
+      <ul style="margin:1.2rem 0 0 2rem; font-size:1.15rem;">
+        <li>Promote and operationalise the African Maritime Transport Charter, aligning initiatives with its strategic goals and African Union frameworks.</li>
+        <li>Coordinate and implement integrated sub-projects addressing key priorities in maritime safety, maritime security, marine environmental protection, and climate resilience.</li>
+        <li>Advance projects from concept to implementation, transitioning initiatives from embryonic stages through pilot phases to operational delivery.</li>
+        <li>Strengthen institutional and human capacity, offering technical cooperation, knowledge exchange, and training for African maritime stakeholders.</li>
+        <li>Facilitate multilateral stakeholder engagement, enhancing regional cooperation and partnership with governments, industry, academia, and civil society.</li>
+      </ul>
+    </div>
+
+    <!-- STRATEGIC PILLARS — restyled plain -->
+    <h2 class="section-title">Strategic Pillars</h2>
+    <div class="pillars-plain">
+      <div class="pillar-item">
+        <div class="pillar-index">01</div>
+        <div class="pillar-content">
+          <h3><i class="fas fa-shield-alt"></i> Maritime Safety & Security</h3>
+          <p>Enhance systems and mutual cooperation to prevent maritime accidents, combat illegal activities at sea, and promote compliance with international maritime conventions.</p>
+        </div>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-index">02</div>
+        <div class="pillar-content">
+          <h3><i class="fas fa-water"></i> Marine Environmental Protection</h3>
+          <p>Coordinate responses to marine pollution, advocate sustainable ocean practices, and ensure alignment with IMO and African Union commitments.</p>
+        </div>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-index">03</div>
+        <div class="pillar-content">
+          <h3><i class="fas fa-ship"></i> Blue Economy Development</h3>
+          <p>Support inclusive economic growth, shipping, fisheries, tourism, renewable energy; ensure equitable benefit-sharing for coastal communities.</p>
+        </div>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-index">04</div>
+        <div class="pillar-content">
+          <h3><i class="fas fa-temperature-high"></i> Climate Change Resilience</h3>
+          <p>Address sea-level rise, warming oceans, coastal erosion; mainstream adaptation and disaster risk reduction into maritime policies.</p>
+        </div>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-index">05</div>
+        <div class="pillar-content">
+          <h3><i class="fas fa-microchip"></i> Innovation, Collaboration & Capacity</h3>
+          <p>Promote satellite monitoring, AI, data platforms; build institutional frameworks and empower local stakeholders.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Implementation approach -->
+    <div style="background:#e1eff9; border-radius:3rem; padding:2rem 2.5rem; margin:3rem 0;">
+      <h3 style="font-size:2rem; color:#114268;">Implementation Approach</h3>
+      <p style="font-size:1.2rem;">AMSSA will: identify priority areas through evidence-based analysis; mobilise resources and technical expertise; establish measurable targets, track progress; ensure coherence with SDGs (13 & 14), AIMS 2050, Paris Agreement, and Agenda 2063.</p>
+    </div>
+
+    <!-- The Mission + numbered list -->
+    <h2 class="section-title">The Mission of the African Maritime Safety and Security</h2>
+    <p style="font-size:1.3rem; font-style:italic; margin-bottom:1rem;">To assist the achievement of African Continental Sustainable Development, through:</p>
+    <p style="font-size:1.2rem; margin-bottom:2rem;">“the provision of scientific and intelligence assistance to African Member States and other Maritime Stakeholders on matters relating to the safe, secure and clean movement of maritime transport, environmental protection, blue economic development, and the prevention of the loss of human lives at sea”</p>
+
+    <ul class="numbered-list">
+      <li>Advance a maritime safety and security scientific, technical & intelligence platform for policy makers and MTS stakeholders</li>
+      <li>Develop a proactive African (scientific and technical) maritime integrated safety, security and environmental protection strategic plan for future development</li>
+      <li>Create a new African scientific and technical platform for African maritime integrated crisis security research systems that will also test the feasibility and promote LRIT systems as well as joint surveillance systems such as Safeseanet, Cleanseanet</li>
+      <li>Design and develop feasibility and needs analysis for the support of Regional Information/Sharing and Centres, National maritime crisis command centres, and shore-based surveillance and security systems</li>
+      <li>Accelerate innovative opportunities aimed at harmonised training and pan African validated certification processes, for Africa maritime administrations and national ports authorities</li>
+      <li>Unlock private investment and global funding financial Mechanisms systems aimed at improving critical infrastructure and advancing technology</li>
+      <li>Contribute to the AU Blue Economy strategy, supporting member states to implement their national blue economy roadmaps</li>
+      <li>Improve the marine environment, supporting green port measures for member states and accelerating progress for the continental achievement of sustainable development goals</li>
+    </ul>
+
+    <div style="text-align:center; margin:5rem 0 3rem;">
+      <p style="font-size:1.5rem;">Guided by the unity of Africa, interdependence, human rights, democracy, and rule of law.</p>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-logo-area">
+        <div class="footer-logo">
+          <a href="default.html">
+            <div class="logo-avif-small"></div>
+            <span>AMSSA</span>
+          </a>
+        </div>
+        <p class="footer-about">African Maritime Safety and Security Agency – protecting the African maritime legacy through data, technology and collaboration.</p>
+        <div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+      </div>
+      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="about.html">About AMSSA</a></li><li><a href="default.html#services-section">Our Services</a></li><li><a href="#">Operations</a></li><li><a href="#">Projects</a></li><li><a href="#">Library, News & Media</a></li><li><a href="index.html#contact-section">Contact</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact Us</h4><p><i class="fas fa-map-pin"></i> 500 Terry Francine Street, San Francine, CA 94158</p><p><i class="fas fa-phone-alt"></i> Tel. 123-456-7890</p><p><i class="fas fa-envelope"></i> info@mysite.com</p><p><i class="fas fa-clock"></i> Mon-Fri: 9:00 – 18:00 GMT</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 AMSSA – African Maritime Safety and Security Agency.</p></div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    (function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const closeMobile = document.getElementById('closeMobile');
+      const overlay = document.getElementById('overlay');
+      const mobileSubmenu = document.getElementById('mobileSubmenu');
+      const mobileMoreToggle = document.getElementById('mobileMoreToggle');
+
+      function openMobile() { mobileNav.classList.add('open'); overlay.classList.add('show'); }
+      function closeMobileNav() { mobileNav.classList.remove('open'); overlay.classList.remove('show'); mobileSubmenu.classList.remove('show'); }
+
+      if (menuToggle) menuToggle.addEventListener('click', openMobile);
+      if (closeMobile) closeMobile.addEventListener('click', closeMobileNav);
+      overlay.addEventListener('click', closeMobileNav);
+
+      if (mobileMoreToggle) {
+        mobileMoreToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          mobileSubmenu.classList.toggle('show');
+        });
+      }
+
+      const moreBtn = document.getElementById('moreBtn');
+      const dropdownContent = document.getElementById('dropdownContent');
+      if (moreBtn && dropdownContent) {
+        moreBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          dropdownContent.classList.toggle('show');
+        });
+        document.addEventListener('click', (e) => {
+          if (!moreBtn.contains(e.target) && !dropdownContent.contains(e.target)) {
+            dropdownContent.classList.remove('show');
+          }
+        });
+      }
+
+      document.querySelectorAll('.mobile-membership, .dropdown-content a[href="membership.html"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          alert('Membership page (demo) – you would be redirected to membership.html');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
