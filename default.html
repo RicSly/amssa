@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AMSSA · African Maritime Safety & Security Agency</title>
+  <!-- Favicon: using amssalogo.avif (converted to ico-like behaviour) -->
+  <link rel="icon" type="image/avif" href="amssalogo.avif">
+  <link rel="shortcut icon" href="amssalogo.avif" type="image/avif">
   <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -122,7 +125,7 @@
       right: 0;
       top: 45px;
       background: white;
-      min-width: 200px;
+      min-width: 240px;
       border-radius: 24px;
       box-shadow: 0 20px 30px -12px #082436;
       z-index: 70;
@@ -362,7 +365,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.8rem;
-      margin: 2rem 0 4rem;
+      margin: 2rem 0 2rem;
     }
     .resource-card {
       background: white;
@@ -384,18 +387,6 @@
     .img-projects { background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500&auto=format'); }
     .resource-content { padding: 1.8rem; }
     .resource-content h3 { font-size: 1.7rem; color: #123e5c; }
-    .resource-content .badge-membership {
-      display: inline-block;
-      background: #123e5c;
-      color: white;
-      border-radius: 40px;
-      padding: 0.3rem 1rem;
-      font-size: 0.85rem;
-      margin-bottom: 0.8rem;
-    }
-    .membership-link {
-      margin-top: 1rem;
-    }
 
     .eval-block {
       background: #1a4a73;
@@ -406,7 +397,7 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      margin: 4rem 0;
+      margin: 3rem 0 4rem;
       cursor: pointer;
       transition: background 0.2s;
     }
@@ -424,10 +415,6 @@
       cursor: pointer;
       transition: 0.2s;
       pointer-events: none;
-    }
-    .eval-btn:hover {
-      background: #f0f7ff;
-      transform: scale(1.02);
     }
 
     .contact-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0 4rem; }
@@ -469,7 +456,7 @@
   </style>
 </head>
 <body>
-  <!-- FLOATING SOCIAL (unchanged) -->
+  <!-- FLOATING SOCIAL -->
   <div class="floating-social">
     <a href="https://facebook.com" target="_blank" class="social-btn"><i class="fab fa-facebook-f"></i></a>
     <a href="https://twitter.com" target="_blank" class="social-btn"><i class="fab fa-twitter"></i></a>
@@ -479,15 +466,15 @@
   <!-- MOBILE OVERLAY -->
   <div class="overlay" id="overlay"></div>
 
-  <!-- MOBILE NAV -->
+  <!-- MOBILE NAV (updated structure) -->
   <div class="mobile-nav" id="mobileNav">
     <div class="mobile-nav-close" id="closeMobile"><i class="fas fa-times"></i></div>
     <div class="mobile-nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="#services-section">Areas of Work</a>  
-      <a href="team.html">Our Team</a>                <!-- ex Operations -->
-      <!-- Resource is a dropdown in mobile (ex Projects) -->
+      <a href="team.html">Our Team</a>               
+      <!-- Resource dropdown -->
       <div class="dropdown-mobile">
         <span class="drop-title" id="mobileResourceToggle"><i class="fas fa-folder-open"></i> Resource <i class="fas fa-chevron-down"></i></span>
         <div class="mobile-submenu" id="mobileResourceSubmenu">
@@ -501,7 +488,7 @@
     </div>
   </div>
 
-  <!-- DESKTOP NAV -->
+  <!-- DESKTOP NAV with exact required structure -->
   <div class="glass-nav">
     <nav class="container">
       <div class="logo-image">
@@ -516,7 +503,7 @@
         <a href="about.html">About</a>
         <a href="#services-section">Areas of Work</a>  
         <a href="team.html">Our Team</a>               
-        <!-- Resource dropdown -->
+        <!-- Resource dropdown (replaces old Projects etc) -->
         <div class="dropdown" id="resourceDropdown">
           <button class="dropbtn" id="resourceBtn"><i class="fas fa-folder-open"></i> Resource <i class="fas fa-chevron-down"></i></button>
           <div class="dropdown-content" id="resourceContent">
@@ -549,7 +536,7 @@
     <div class="slide-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span><span class="indicator" data-index="2"></span></div>
   </div>
 
-  <!-- MISSION (unchanged) -->
+  <!-- MISSION FULLWIDTH -->
   <div class="mission-fullwidth">
     <div class="mission-content">
       <h2>African Maritime Safety and Security Agency. AMSSA</h2>
@@ -558,9 +545,9 @@
     </div>
   </div>
 
-  <!-- MAIN -->
+  <!-- MAIN CONTENT -->
   <main class="container">
-    <!-- Executive Management – unchanged, but note "Our Team" now points to separate page -->
+    <!-- Executive Management (Our Team reference) -->
     <h2 class="section-title">Executive Management</h2>
     <div class="team-grid">
       <div class="team-card"><div class="team-img img-magnus"></div><h3>Magnus Addico</h3><p>President</p></div>
@@ -568,7 +555,7 @@
       <div class="team-card"><div class="team-img img-viceadm"></div><h3>Vice Admiral (Rtd) Issah Adam Yakubu</h3><p>Executive Director</p></div>
     </div>
 
-    <!-- AREAS OF WORK (ex Services) with anchor -->
+    <!-- AREAS OF WORK (ex Services) -->
     <div id="services-section">
       <h2 class="section-title">Areas of Work</h2>
       <div class="services-wrapper">
@@ -584,7 +571,7 @@
       </div>
     </div>
 
-    <!-- testimonial -->
+    <!-- TESTIMONIAL (unchanged) -->
     <div class="testimonial-area">
       <div class="testimonial-header"><h3>What Our Partners Say</h3><p>Trusted by maritime agencies across Africa</p></div>
       <div class="slider"><div class="slider-track" id="sliderTrack">
@@ -595,7 +582,7 @@
       <div class="dot-container" id="dotContainer"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
     </div>
 
-    <!-- RESOURCE SECTION – -->
+    <!-- RESOURCE SECTION (three required subsections) -->
     <h2 class="section-title">Resource</h2>
     <div class="resource-subsections">
       <!-- Library -->
@@ -605,18 +592,18 @@
       <!-- Projects (current & past) -->
       <div class="resource-card"><a href="projects.html" style="text-decoration: none; color: inherit;"><div class="resource-img img-projects"></div><div class="resource-content"><h3>Projects</h3><p>Current and past organisational projects.</p><span style="color:#14689c;">Explore <i class="fas fa-chevron-right"></i></span></div></a></div>
     </div>
-    <!-- Membership (moved under Resource) – extra callout, still inside Resource area -->
-    <div style="margin-top: -1.5rem; margin-bottom: 3rem; text-align: left;">
-      <a href="membership.html" style="background: #0b2b43; color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 60px; display: inline-flex; align-items: center; gap: 0.8rem; font-weight: 600;"><i class="fas fa-user-plus"></i> Become a Member</a>
+    <!-- Membership (moved under Resource) – extra callout -->
+    <div style="margin-top: -1.2rem; margin-bottom: 2.5rem; text-align: left;">
+      <a href="membership.html" style="background: #0b2b43; color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 60px; display: inline-flex; align-items: center; gap: 0.8rem; font-weight: 600;"><i class="fas fa-user-plus"></i> Membership (under Resource)</a>
     </div>
 
-    <!-- ready to partner -->
+    <!-- Partner block -->
     <div class="eval-block" id="partnerBlock">
       <div><h2 style="font-size: 2rem;">Ready to Partner with Us?</h2><p>Get a free consultation & evaluation.</p></div>
       <button class="eval-btn" id="evalBtn"><i class="fas fa-file-signature"></i> Free Evaluation</button>
     </div>
 
-    <!-- contact forms with anchor -->
+    <!-- CONTACT with anchor -->
     <div id="contact-section" class="contact-pair">
       <div class="contact-form-box">
         <h3><i class="fas fa-paper-plane"></i> Your Contact information</h3>
@@ -644,7 +631,7 @@
     </div>
   </main>
 
-  <!-- FOOTER (updated links) -->
+  <!-- FOOTER with updated links -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-logo-area">
@@ -720,7 +707,7 @@
         setInterval(() => goToTesti(currentTesti + 1), 7000);
       }
 
-      // Partner block scroll to contact
+      // Partner block -> scroll to contact
       const partnerBlock = document.getElementById('partnerBlock');
       if (partnerBlock) {
         partnerBlock.addEventListener('click', () => {
@@ -758,7 +745,7 @@
         });
       }
 
-      // Smooth scroll for area of work / contact
+      // Smooth scroll for in-page links
       document.querySelectorAll('a[href="#services-section"]').forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
@@ -793,4 +780,3 @@
   </script>
 </body>
 </html>
-
