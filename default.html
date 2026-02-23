@@ -24,7 +24,7 @@
       background: rgba(255,255,255,0.7);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255,255,255,0.7);
+      border-bottom: 1px solid rgba(255,255,255,0.5);
       position: sticky;
       top: 0;
       z-index: 60;
@@ -479,13 +479,13 @@
   <!-- MOBILE OVERLAY -->
   <div class="overlay" id="overlay"></div>
 
-  <!-- MOBILE NAV (left) with updated structure -->
+  <!-- MOBILE NAV -->
   <div class="mobile-nav" id="mobileNav">
     <div class="mobile-nav-close" id="closeMobile"><i class="fas fa-times"></i></div>
     <div class="mobile-nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="#services-section">Areas of Work</a>   <!-- renamed from Services -->
+      <a href="#services-section">Areas of Work</a>  
       <a href="team.html">Our Team</a>                <!-- ex Operations -->
       <!-- Resource is a dropdown in mobile (ex Projects) -->
       <div class="dropdown-mobile">
@@ -501,7 +501,7 @@
     </div>
   </div>
 
-  <!-- DESKTOP NAV – exact updated structure -->
+  <!-- DESKTOP NAV -->
   <div class="glass-nav">
     <nav class="container">
       <div class="logo-image">
@@ -514,9 +514,9 @@
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="#services-section">Areas of Work</a>   <!-- renamed -->
-        <a href="team.html">Our Team</a>                 <!-- ex Operations -->
-        <!-- Resource dropdown (replaces Projects / Library separate) -->
+        <a href="#services-section">Areas of Work</a>  
+        <a href="team.html">Our Team</a>               
+        <!-- Resource dropdown -->
         <div class="dropdown" id="resourceDropdown">
           <button class="dropbtn" id="resourceBtn"><i class="fas fa-folder-open"></i> Resource <i class="fas fa-chevron-down"></i></button>
           <div class="dropdown-content" id="resourceContent">
@@ -570,7 +570,7 @@
 
     <!-- AREAS OF WORK (ex Services) with anchor -->
     <div id="services-section">
-      <h2 class="section-title">Areas of Work</h2>   <!-- renamed -->
+      <h2 class="section-title">Areas of Work</h2>
       <div class="services-wrapper">
         <p style="margin-bottom:2.5rem; font-size:1.2rem;">At AMSSA, we focus on key areas to enhance maritime safety and security across African nations. Our solutions are designed for National Maritime Administrations, Navies, Coastguards, and Maritime Law Enforcement bodies.</p>
         <div class="services-grid">
@@ -584,7 +584,7 @@
       </div>
     </div>
 
-    <!-- testimonial (unchanged) -->
+    <!-- testimonial -->
     <div class="testimonial-area">
       <div class="testimonial-header"><h3>What Our Partners Say</h3><p>Trusted by maritime agencies across Africa</p></div>
       <div class="slider"><div class="slider-track" id="sliderTrack">
@@ -595,7 +595,7 @@
       <div class="dot-container" id="dotContainer"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
     </div>
 
-    <!-- RESOURCE SECTION – three required subsections + Membership inside -->
+    <!-- RESOURCE SECTION – -->
     <h2 class="section-title">Resource</h2>
     <div class="resource-subsections">
       <!-- Library -->
@@ -607,10 +607,10 @@
     </div>
     <!-- Membership (moved under Resource) – extra callout, still inside Resource area -->
     <div style="margin-top: -1.5rem; margin-bottom: 3rem; text-align: left;">
-      <a href="membership.html" style="background: #0b2b43; color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 60px; display: inline-flex; align-items: center; gap: 0.8rem; font-weight: 600;"><i class="fas fa-user-plus"></i> Become a Member (under Resource)</a>
+      <a href="membership.html" style="background: #0b2b43; color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 60px; display: inline-flex; align-items: center; gap: 0.8rem; font-weight: 600;"><i class="fas fa-user-plus"></i> Become a Member</a>
     </div>
 
-    <!-- ready to partner – unchanged -->
+    <!-- ready to partner -->
     <div class="eval-block" id="partnerBlock">
       <div><h2 style="font-size: 2rem;">Ready to Partner with Us?</h2><p>Get a free consultation & evaluation.</p></div>
       <button class="eval-btn" id="evalBtn"><i class="fas fa-file-signature"></i> Free Evaluation</button>
@@ -793,3 +793,4 @@
   </script>
 </body>
 </html>
+
