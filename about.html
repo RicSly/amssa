@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AMSSA · About – African Maritime Safety & Security Agency</title>
+  <link rel="icon" type="image/avif" href="amssalogo.avif">
+  <link rel="shortcut icon" href="amssalogo.avif" type="image/avif">
   <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -119,7 +121,7 @@
       right: 0;
       top: 45px;
       background: white;
-      min-width: 180px;
+      min-width: 240px;
       border-radius: 24px;
       box-shadow: 0 20px 30px -12px #082436;
       z-index: 70;
@@ -525,48 +527,53 @@
     <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
   </div>
 
-  <!-- mobile overlay & nav -->
+  <!-- mobile overlay & nav (updated structure) -->
   <div class="overlay" id="overlay"></div>
   <div class="mobile-nav" id="mobileNav">
     <div class="mobile-nav-close" id="closeMobile"><i class="fas fa-times"></i></div>
     <div class="mobile-nav-links">
-      <a href="about.html" class="mobile-about">About</a>
-      <a href="index.html#services-section">Services</a>
-      <a href="#">Operations</a>
-      <a href="#">Projects</a>
-      <a href="#">Library, News & Media</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#services-section">Areas of Work</a>
+      <a href="team.html">Our Team</a>
       <div class="dropdown-mobile">
-        <span class="drop-title" id="mobileMoreToggle"><i class="fas fa-globe"></i> More <i class="fas fa-chevron-down"></i></span>
-        <div class="mobile-submenu" id="mobileSubmenu">
-          <a href="default.html#contact-section"><i class="fas fa-envelope"></i> Contact Us</a>
-          <a href="membership.html"><i class="fas fa-user-plus"></i> Membership</a>
+        <span class="drop-title" id="mobileResourceToggle"><i class="fas fa-folder-open"></i> Resource <i class="fas fa-chevron-down"></i></span>
+        <div class="mobile-submenu" id="mobileResourceSubmenu">
+          <a href="library.html">Library</a>
+          <a href="media-news.html">Media & News</a>
+          <a href="projects.html">Projects</a>
+          <a href="membership.html">Membership</a>
         </div>
       </div>
+      <a href="index.html#contact-section">Contact Us</a>
     </div>
   </div>
 
-  <!-- desktop nav -->
+  <!-- desktop nav (updated to match new structure) -->
   <div class="glass-nav">
     <nav class="container">
       <div class="logo-image">
-        <a href="default.html">
+        <a href="index.html">
           <div class="logo-avif" role="img" aria-label="AMSSA logo"></div>
           <span class="logo-text">AMSSA</span>
         </a>
       </div>
       <div class="nav-links">
+        <a href="index.html">Home</a>
         <a href="about.html" style="font-weight:700; color:#1a5d93;">About</a>
-        <a href="default.html#services-section">Services</a>
-        <a href="#">Operations</a>
-        <a href="#">Projects</a>
-        <a href="#">Library, News & Media</a>
-        <div class="dropdown" id="desktopDropdown">
-          <button class="dropbtn" id="moreBtn"><i class="fas fa-globe"></i> More <i class="fas fa-chevron-down"></i></button>
-          <div class="dropdown-content" id="dropdownContent">
-            <a href="default.html#contact-section"><i class="fas fa-envelope"></i> Contact Us</a>
+        <a href="index.html#services-section">Areas of Work</a>
+        <a href="team.html">Our Team</a>
+        <!-- Resource dropdown (ex Projects / Library combined) -->
+        <div class="dropdown" id="resourceDropdown">
+          <button class="dropbtn" id="resourceBtn"><i class="fas fa-folder-open"></i> Resource <i class="fas fa-chevron-down"></i></button>
+          <div class="dropdown-content" id="resourceContent">
+            <a href="library.html"><i class="fas fa-book"></i> Library – PDFs, reports, publications</a>
+            <a href="media-news.html"><i class="fas fa-newspaper"></i> Media & News – articles, photos, videos</a>
+            <a href="projects.html"><i class="fas fa-hard-hat"></i> Projects – current & past</a>
             <a href="membership.html"><i class="fas fa-user-plus"></i> Membership</a>
           </div>
         </div>
+        <a href="index.html#contact-section">Contact Us</a>
       </div>
       <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
     </nav>
@@ -579,7 +586,7 @@
       <p>African Maritime Safety and Security Agency – united for a safe, secure and sustainable maritime domain</p>
     </div>
 
-    <!-- president card – with name & title under image (updated) -->
+    <!-- president card -->
     <div class="president-card">
       <div class="president-figure">
         <div class="president-img" title="President Mr Magnus Addico" style="background-image: url('images/magnus.avif');"></div>
@@ -616,7 +623,7 @@
       </ul>
     </div>
 
-    <!-- STRATEGIC PILLARS — restyled plain -->
+    <!-- STRATEGIC PILLARS -->
     <h2 class="section-title">Strategic Pillars</h2>
     <div class="pillars-plain">
       <div class="pillar-item">
@@ -683,67 +690,92 @@
     </div>
   </div>
 
-  <!-- footer -->
+  <!-- footer (updated links) -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-logo-area">
         <div class="footer-logo">
-          <a href="default.html">
+          <a href="index.html">
             <div class="logo-avif-small"></div>
             <span>AMSSA</span>
           </a>
         </div>
         <p class="footer-about">African Maritime Safety and Security Agency – protecting the African maritime legacy through data, technology and collaboration.</p>
-        <div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
       </div>
-      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="about.html">About AMSSA</a></li><li><a href="default.html#services-section">Our Services</a></li><li><a href="#">Operations</a></li><li><a href="#">Projects</a></li><li><a href="#">Library, News & Media</a></li><li><a href="index.html#contact-section">Contact</a></li></ul></div>
-      <div class="footer-contact"><h4>Contact Us</h4><p><i class="fas fa-map-pin"></i> 500 Terry Francine Street, San Francine, CA 94158</p><p><i class="fas fa-phone-alt"></i> Tel. 123-456-7890</p><p><i class="fas fa-envelope"></i> info@mysite.com</p><p><i class="fas fa-clock"></i> Mon-Fri: 9:00 – 18:00 GMT</p></div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#services-section">Areas of Work</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="library.html">Library</a></li>
+          <li><a href="media-news.html">Media & News</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="index.html#contact-section">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-map-pin"></i> GL-108-0038, Tse addo La Dade, Kotopon Burma Camp, Accra</p>
+        <p><i class="fas fa-phone-alt"></i> Tel: +233 50 4953400</p>
+        <p><i class="fas fa-envelope"></i> info@amssa.co</p>
+        <p><i class="fas fa-clock"></i> Mon-Fri : 8:30 am-4:30pm GMT</p>
+      </div>
     </div>
-    <div class="footer-bottom"><p>© 2025 AMSSA – African Maritime Safety and Security Agency.</p></div>
+    <div class="footer-bottom"><p>© 2026 AMSSA – African Maritime Safety and Security Agency.</p></div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- JavaScript (updated for new IDs) -->
   <script>
     (function() {
       const menuToggle = document.getElementById('menuToggle');
       const mobileNav = document.getElementById('mobileNav');
       const closeMobile = document.getElementById('closeMobile');
       const overlay = document.getElementById('overlay');
-      const mobileSubmenu = document.getElementById('mobileSubmenu');
-      const mobileMoreToggle = document.getElementById('mobileMoreToggle');
+      const mobileResourceToggle = document.getElementById('mobileResourceToggle');
+      const mobileResourceSubmenu = document.getElementById('mobileResourceSubmenu');
 
       function openMobile() { mobileNav.classList.add('open'); overlay.classList.add('show'); }
-      function closeMobileNav() { mobileNav.classList.remove('open'); overlay.classList.remove('show'); mobileSubmenu.classList.remove('show'); }
+      function closeMobileNav() { mobileNav.classList.remove('open'); overlay.classList.remove('show'); if(mobileResourceSubmenu) mobileResourceSubmenu.classList.remove('show'); }
 
       if (menuToggle) menuToggle.addEventListener('click', openMobile);
       if (closeMobile) closeMobile.addEventListener('click', closeMobileNav);
-      overlay.addEventListener('click', closeMobileNav);
+      if (overlay) overlay.addEventListener('click', closeMobileNav);
 
-      if (mobileMoreToggle) {
-        mobileMoreToggle.addEventListener('click', (e) => {
+      if (mobileResourceToggle) {
+        mobileResourceToggle.addEventListener('click', (e) => {
           e.preventDefault();
-          mobileSubmenu.classList.toggle('show');
+          mobileResourceSubmenu.classList.toggle('show');
         });
       }
 
-      const moreBtn = document.getElementById('moreBtn');
-      const dropdownContent = document.getElementById('dropdownContent');
-      if (moreBtn && dropdownContent) {
-        moreBtn.addEventListener('click', (e) => {
+      // desktop resource dropdown (renamed)
+      const resourceBtn = document.getElementById('resourceBtn');
+      const resourceContent = document.getElementById('resourceContent');
+      if (resourceBtn && resourceContent) {
+        resourceBtn.addEventListener('click', (e) => {
           e.stopPropagation();
-          dropdownContent.classList.toggle('show');
+          resourceContent.classList.toggle('show');
         });
         document.addEventListener('click', (e) => {
-          if (!moreBtn.contains(e.target) && !dropdownContent.contains(e.target)) {
-            dropdownContent.classList.remove('show');
+          if (!resourceBtn.contains(e.target) && !resourceContent.contains(e.target)) {
+            resourceContent.classList.remove('show');
           }
         });
       }
 
-      document.querySelectorAll('.mobile-membership, .dropdown-content a[href="membership.html"]').forEach(link => {
+      // any membership alert (optional, for demo)
+      document.querySelectorAll('a[href="membership.html"]').forEach(link => {
         link.addEventListener('click', (e) => {
-          e.preventDefault();
-          alert('Membership page (demo) – you would be redirected to membership.html');
+          // e.preventDefault(); // uncomment to demo alert
+          // alert('Membership page (demo)');
         });
       });
     })();
