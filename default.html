@@ -36,7 +36,6 @@
       padding: 0.5rem 2rem;
     }
 
-    /* broader navigation */
     nav {
       display: flex;
       justify-content: space-between;
@@ -73,7 +72,7 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* desktop nav links + click-only dropdown (no hover) */
+    /* desktop nav – updated structure */
     .nav-links {
       display: flex;
       align-items: center;
@@ -92,7 +91,7 @@
       color: #1d6190;
     }
 
-    /* dropdown (more) - click only, no hover */
+    /* Resource dropdown (more) - click only */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -117,14 +116,13 @@
       background: #f0f7ff;
     }
 
-    /* dropdown content hidden by default, shown when .show class added */
     .dropdown-content {
       display: none;
       position: absolute;
       right: 0;
       top: 45px;
       background: white;
-      min-width: 180px;
+      min-width: 200px;
       border-radius: 24px;
       box-shadow: 0 20px 30px -12px #082436;
       z-index: 70;
@@ -165,7 +163,7 @@
       cursor: pointer;
     }
 
-    /* offcanvas mobile menu (left) */
+    /* offcanvas mobile */
     .mobile-nav {
       position: fixed;
       top: 0;
@@ -290,7 +288,7 @@
       transform: scale(1.15);
     }
 
-    /* slideshow, mission etc */
+    /* slideshow */
     .hero-slideshow {
       width: 100%;
       height: 70vh;
@@ -309,7 +307,6 @@
     .indicator { width: 14px; height: 14px; background: rgba(255,255,255,0.5); border-radius: 30px; cursor: pointer; transition: 0.2s; }
     .indicator.active { background: white; width: 42px; }
 
-    /* mission fullwidth */
     .mission-fullwidth { width: 100%; background: rgba(100 143 175 / 20%); backdrop-filter: blur(4px); border-top: 3px double #bfd9f0; border-bottom: 3px double #bfd9f0; padding: 3rem 0; box-shadow: inset 0 8px 12px -8px rgba(0,30,50,0.2), inset 0 -8px 12px -8px rgba(0,30,50,0.2); }
     .mission-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
     .mission-content h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 1.2rem; color: #0c2f4b; }
@@ -328,10 +325,9 @@
       scroll-margin-top: 90px;
     }
 
-    /* team, services, testimonial */
     .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
     .team-card { background: white; border-radius: 2.5rem; padding: 1.8rem 1rem 1.5rem; text-align: center; box-shadow: 0 20px 30px -18px #153e58; transition: 0.2s; }
-    .team-card:hover { transform: translateY(-8px); box-shadow: 0 25px 35px -18px #0b3552; }
+    .team-card:hover { transform: translateY(-8px); }
     .team-img { width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 1.2rem; background-size: cover; background-position: center; border: 5px solid white; box-shadow: 0 12px 18px -12px #09273b; }
     .img-magnus { background-image: url('images/magnus.avif'); }
     .img-karen { background-image: url('images/karen.avif'); }
@@ -361,15 +357,45 @@
     .dot { width: 14px; height: 14px; background: #44779f; border-radius: 30px; cursor: pointer; }
     .dot.active { background: white; width: 40px; }
 
-    .news-holder { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin: 2rem 0 4rem; }
-    .news-card { background: white; border-radius: 2.2rem; overflow: hidden; box-shadow: 0 25px 30px -20px #163f5b; transition: 0.2s; }
-    .news-card:hover { transform: translateY(-6px); }
-    .news-img { height: 200px; background-size: cover; background-position: center; }
+    /* Resource section – three sub‑sections */
+    .resource-subsections {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin: 2rem 0 4rem;
+    }
+    .resource-card {
+      background: white;
+      border-radius: 2.2rem;
+      overflow: hidden;
+      box-shadow: 0 25px 30px -20px #163f5b;
+      transition: 0.2s;
+    }
+    .resource-card:hover {
+      transform: translateY(-6px);
+    }
+    .resource-img {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
     .img-lib { background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&auto=format'); }
     .img-media { background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=500&auto=format'); }
-    .img-news { background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=500&auto=format'); }
-    .news-content { padding: 1.8rem; }
-    .news-content h3 { font-size: 1.7rem; color: #123e5c; }
+    .img-projects { background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500&auto=format'); }
+    .resource-content { padding: 1.8rem; }
+    .resource-content h3 { font-size: 1.7rem; color: #123e5c; }
+    .resource-content .badge-membership {
+      display: inline-block;
+      background: #123e5c;
+      color: white;
+      border-radius: 40px;
+      padding: 0.3rem 1rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+    .membership-link {
+      margin-top: 1rem;
+    }
 
     .eval-block {
       background: #1a4a73;
@@ -410,19 +436,14 @@
     .contact-form-box button { background: #15507b; color: white; border: none; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 600; cursor: pointer; }
     .contact-form-box button:hover { background: #1e6da5; }
 
-    /* footer */
     .site-footer { background: #092538; color: #e0edfa; padding: 3rem 2rem 1.5rem; border-radius: 4rem 4rem 0 0; margin-top: 3rem; }
     .footer-container { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
     .footer-logo-area { display: flex; flex-direction: column; align-items: flex-start; }
     .footer-logo a { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem; text-decoration: none; }
     .footer-logo .logo-avif-small {
-      width: 80px;         
-      height: 100px;         
-      border-radius: 5px;
+      width: 80px; height: 100px; border-radius: 5px;
       background-image: url('amssalogo.avif');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-size: cover; background-position: center; background-repeat: no-repeat;
     }
     .footer-logo span { font-size: 2rem; font-weight: 700; color: white; letter-spacing: -0.5px; }
     .footer-about { font-size: 0.95rem; line-height: 1.6; color: #bdd8f2; margin-bottom: 1.2rem; }
@@ -441,14 +462,14 @@
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .menu-toggle { display: block; }
-      .news-holder, .footer-container, .contact-pair { grid-template-columns: 1fr; }
+      .resource-subsections, .footer-container, .contact-pair { grid-template-columns: 1fr; }
       .slide-caption h1 { font-size: 2rem; }
       .floating-social { display: none; }
     }
   </style>
 </head>
 <body>
-  <!-- FLOATING SOCIAL -->
+  <!-- FLOATING SOCIAL (unchanged) -->
   <div class="floating-social">
     <a href="https://facebook.com" target="_blank" class="social-btn"><i class="fab fa-facebook-f"></i></a>
     <a href="https://twitter.com" target="_blank" class="social-btn"><i class="fab fa-twitter"></i></a>
@@ -458,29 +479,31 @@
   <!-- MOBILE OVERLAY -->
   <div class="overlay" id="overlay"></div>
 
-  <!-- MOBILE NAV (left) -->
+  <!-- MOBILE NAV (left) with updated structure -->
   <div class="mobile-nav" id="mobileNav">
     <div class="mobile-nav-close" id="closeMobile"><i class="fas fa-times"></i></div>
     <div class="mobile-nav-links">
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="#services-section">Services</a>
-      <a href="operations.html">Operations</a>
-      <a href="projects.html">Projects</a>
-      <a href="library.html">Library, News & Media</a>
+      <a href="#services-section">Areas of Work</a>   <!-- renamed from Services -->
+      <a href="team.html">Our Team</a>                <!-- ex Operations -->
+      <!-- Resource is a dropdown in mobile (ex Projects) -->
       <div class="dropdown-mobile">
-        <span class="drop-title" id="mobileMoreToggle"><i class="fas fa-globe"></i> More <i class="fas fa-chevron-down"></i></span>
-        <div class="mobile-submenu" id="mobileSubmenu">
-          <a href="#contact-section"><i class="fas fa-envelope"></i> Contact Us</a>
+        <span class="drop-title" id="mobileResourceToggle"><i class="fas fa-folder-open"></i> Resource <i class="fas fa-chevron-down"></i></span>
+        <div class="mobile-submenu" id="mobileResourceSubmenu">
+          <a href="library.html"><i class="fas fa-book"></i> Library</a>
+          <a href="media-news.html"><i class="fas fa-newspaper"></i> Media & News</a>
+          <a href="projects.html"><i class="fas fa-hard-hat"></i> Projects</a>
           <a href="membership.html"><i class="fas fa-user-plus"></i> Membership</a>
         </div>
       </div>
+      <a href="#contact-section">Contact Us</a>
     </div>
   </div>
 
-  <!-- DESKTOP NAV -->
+  <!-- DESKTOP NAV – exact updated structure -->
   <div class="glass-nav">
     <nav class="container">
-      <!-- BIGGER LOGO using amssalogo.avif -->
       <div class="logo-image">
         <a href="index.html">
           <div class="logo-avif" role="img" aria-label="AMSSA logo"></div>
@@ -489,25 +512,28 @@
       </div>
 
       <div class="nav-links">
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="#services-section">Services</a>
-        <a href="operations.html">Operations</a>
-        <a href="projects.html">Projects</a>
-        <a href="library.html">Library, News & Media</a>
-        <div class="dropdown" id="desktopDropdown">
-          <button class="dropbtn" id="moreBtn"><i class="fas fa-globe"></i> More <i class="fas fa-chevron-down"></i></button>
-          <div class="dropdown-content" id="dropdownContent">
-            <a href="#contact-section"><i class="fas fa-envelope"></i> Contact Us</a>
+        <a href="#services-section">Areas of Work</a>   <!-- renamed -->
+        <a href="team.html">Our Team</a>                 <!-- ex Operations -->
+        <!-- Resource dropdown (replaces Projects / Library separate) -->
+        <div class="dropdown" id="resourceDropdown">
+          <button class="dropbtn" id="resourceBtn"><i class="fas fa-folder-open"></i> Resource <i class="fas fa-chevron-down"></i></button>
+          <div class="dropdown-content" id="resourceContent">
+            <a href="library.html"><i class="fas fa-book"></i> Library – PDFs, reports, publications</a>
+            <a href="media-news.html"><i class="fas fa-newspaper"></i> Media & News – articles, photos, videos</a>
+            <a href="projects.html"><i class="fas fa-hard-hat"></i> Projects – current & past</a>
             <a href="membership.html"><i class="fas fa-user-plus"></i> Membership</a>
           </div>
         </div>
+        <a href="#contact-section">Contact Us</a>
       </div>
       <!-- mobile toggle -->
       <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
     </nav>
   </div>
 
-  <!-- SLIDESHOW -->
+  <!-- SLIDESHOW (unchanged) -->
   <div class="hero-slideshow">
     <div class="slide-container">
       <div class="slide active" style="background-image: url('amssa.jpg');">
@@ -523,7 +549,7 @@
     <div class="slide-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span><span class="indicator" data-index="2"></span></div>
   </div>
 
-  <!-- MISSION -->
+  <!-- MISSION (unchanged) -->
   <div class="mission-fullwidth">
     <div class="mission-content">
       <h2>African Maritime Safety and Security Agency. AMSSA</h2>
@@ -534,6 +560,7 @@
 
   <!-- MAIN -->
   <main class="container">
+    <!-- Executive Management – unchanged, but note "Our Team" now points to separate page -->
     <h2 class="section-title">Executive Management</h2>
     <div class="team-grid">
       <div class="team-card"><div class="team-img img-magnus"></div><h3>Magnus Addico</h3><p>President</p></div>
@@ -541,23 +568,23 @@
       <div class="team-card"><div class="team-img img-viceadm"></div><h3>Vice Admiral (Rtd) Issah Adam Yakubu</h3><p>Executive Director</p></div>
     </div>
 
-    <!-- Our services section with anchor -->
+    <!-- AREAS OF WORK (ex Services) with anchor -->
     <div id="services-section">
-      <h2 class="section-title">Our Services</h2>
+      <h2 class="section-title">Areas of Work</h2>   <!-- renamed -->
       <div class="services-wrapper">
-        <p style="margin-bottom:2.5rem; font-size:1.2rem;">At AMSSA, we offer a wide range of services aimed at enhancing maritime safety and security across African nations. Our solutions are designed to meet the specific needs of National Maritime Administrations, Navies, Coastguards, and Maritime Law Enforcement bodies.</p>
+        <p style="margin-bottom:2.5rem; font-size:1.2rem;">At AMSSA, we focus on key areas to enhance maritime safety and security across African nations. Our solutions are designed for National Maritime Administrations, Navies, Coastguards, and Maritime Law Enforcement bodies.</p>
         <div class="services-grid">
-          <div class="service-card"><h3><i class="fas fa-database"></i> Data Procurement</h3><p>We specialize in the procurement of maritime data, ensuring that vital information is gathered and made freely available for the benefit of African States and Governments.</p><a href="data-procurement.html" class="discover">Discover More <i class="fas fa-arrow-right"></i></a></div>
-          <div class="service-card"><h3><i class="fas fa-microchip"></i> Technology Centralization</h3><p>Our agency centralizes cutting-edge maritime technology to empower African nations in safeguarding their maritime interests and securing their borders.</p><a href="tech-centralization.html" class="discover">Discover More <i class="fas fa-arrow-right"></i></a></div>
-          <div class="service-card"><h3><i class="fas fa-chart-pie"></i> Knowledge Analysis</h3><p>We analyze maritime knowledge to provide actionable insights for African States, Governments, and their agencies, enabling informed decision-making and strategic planning.</p><a href="knowledge-analysis.html" class="discover">Discover More <i class="fas fa-arrow-right"></i></a></div>
-          <div class="service-card"><h3><i class="fas fa-chalkboard-user"></i> Capacity Building</h3><p>AMSSA is committed to enhancing the capacity of African nations in maritime safety and security through training, skill development, and knowledge transfer programs.</p><a href="capacity-building.html" class="discover">Discover More <i class="fas fa-arrow-right"></i></a></div>
-          <div class="service-card"><h3><i class="fas fa-handshake"></i> Collaborative Partnerships</h3><p>We facilitate collaborative partnerships between African nations, international organizations, and maritime stakeholders to promote collective efforts in ensuring maritime safety and security.</p><a href="partnerships.html" class="discover">Discover More <i class="fas fa-arrow-right"></i></a></div>
-          <div class="service-card"><h3><i class="fas fa-compass"></i> Consulting Services</h3><p>Our consulting services provide expert guidance and support to African Nations, Navies, Coastguards, and Maritime Law Enforcement bodies in formulating effective maritime security strategies and policies.</p><a href="consulting.html" class="discover">Discover More <i class="fas fa-arrow-right"></i></a></div>
+          <div class="service-card"><h3><i class="fas fa-database"></i> Data Procurement</h3><p>Procurement of maritime data, made freely available for African States and Governments.</p><a href="data-procurement.html" class="discover">Discover More <i class="fas fa-arrow-right"></i></a></div>
+          <div class="service-card"><h3><i class="fas fa-microchip"></i> Technology Centralization</h3><p>Centralizing cutting-edge maritime technology to safeguard African waters.</p><a href="tech-centralization.html" class="discover">Discover More <i class="fas fa-arrow-right"></i></a></div>
+          <div class="service-card"><h3><i class="fas fa-chart-pie"></i> Knowledge Analysis</h3><p>Actionable insights for strategic planning and informed decision-making.</p><a href="knowledge-analysis.html" class="discover">Discover More <i class="fas fa-arrow-right"></i></a></div>
+          <div class="service-card"><h3><i class="fas fa-chalkboard-user"></i> Capacity Building</h3><p>Training, skill development and knowledge transfer programmes.</p><a href="capacity-building.html" class="discover">Discover More <i class="fas fa-arrow-right"></i></a></div>
+          <div class="service-card"><h3><i class="fas fa-handshake"></i> Collaborative Partnerships</h3><p>Facilitating partnerships between African nations and international stakeholders.</p><a href="partnerships.html" class="discover">Discover More <i class="fas fa-arrow-right"></i></a></div>
+          <div class="service-card"><h3><i class="fas fa-compass"></i> Consulting Services</h3><p>Expert guidance on maritime security strategies and policies.</p><a href="consulting.html" class="discover">Discover More <i class="fas fa-arrow-right"></i></a></div>
         </div>
       </div>
     </div>
 
-    <!-- testimonial -->
+    <!-- testimonial (unchanged) -->
     <div class="testimonial-area">
       <div class="testimonial-header"><h3>What Our Partners Say</h3><p>Trusted by maritime agencies across Africa</p></div>
       <div class="slider"><div class="slider-track" id="sliderTrack">
@@ -568,15 +595,22 @@
       <div class="dot-container" id="dotContainer"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
     </div>
 
-    <!-- library, media, news -->
-    <h2 class="section-title">Library, Media & News</h2>
-    <div class="news-holder">
-      <div class="news-card"><a href="library.html" style="text-decoration: none; color: inherit;"><div class="news-img img-lib"></div><div class="news-content"><h3>Library</h3><p>Digital archives, publications & historical records.</p><span style="color:#14689c;">Explore <i class="fas fa-chevron-right"></i></span></div></a></div>
-      <div class="news-card"><a href="media.html" style="text-decoration: none; color: inherit;"><div class="news-img img-media"></div><div class="news-content"><h3>Media</h3><p>Videos, photos, press releases & interviews.</p><span style="color:#14689c;">Watch <i class="fas fa-chevron-right"></i></span></div></a></div>
-      <div class="news-card"><a href="news.html" style="text-decoration: none; color: inherit;"><div class="news-img img-news"></div><div class="news-content"><h3>News</h3><p>Latest maritime security headlines & updates.</p><span style="color:#14689c;">Read more <i class="fas fa-chevron-right"></i></span></div></a></div>
+    <!-- RESOURCE SECTION – three required subsections + Membership inside -->
+    <h2 class="section-title">Resource</h2>
+    <div class="resource-subsections">
+      <!-- Library -->
+      <div class="resource-card"><a href="library.html" style="text-decoration: none; color: inherit;"><div class="resource-img img-lib"></div><div class="resource-content"><h3>Library</h3><p>PDFs, reports, publications, official documents.</p><span style="color:#14689c;">Browse <i class="fas fa-chevron-right"></i></span></div></a></div>
+      <!-- Media & News (combined) -->
+      <div class="resource-card"><a href="media-news.html" style="text-decoration: none; color: inherit;"><div class="resource-img img-media"></div><div class="resource-content"><h3>Media & News</h3><p>News articles, announcements, photos, and videos.</p><span style="color:#14689c;">View <i class="fas fa-chevron-right"></i></span></div></a></div>
+      <!-- Projects (current & past) -->
+      <div class="resource-card"><a href="projects.html" style="text-decoration: none; color: inherit;"><div class="resource-img img-projects"></div><div class="resource-content"><h3>Projects</h3><p>Current and past organisational projects.</p><span style="color:#14689c;">Explore <i class="fas fa-chevron-right"></i></span></div></a></div>
+    </div>
+    <!-- Membership (moved under Resource) – extra callout, still inside Resource area -->
+    <div style="margin-top: -1.5rem; margin-bottom: 3rem; text-align: left;">
+      <a href="membership.html" style="background: #0b2b43; color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 60px; display: inline-flex; align-items: center; gap: 0.8rem; font-weight: 600;"><i class="fas fa-user-plus"></i> Become a Member (under Resource)</a>
     </div>
 
-    <!-- ready to partner - now sends to contact form -->
+    <!-- ready to partner – unchanged -->
     <div class="eval-block" id="partnerBlock">
       <div><h2 style="font-size: 2rem;">Ready to Partner with Us?</h2><p>Get a free consultation & evaluation.</p></div>
       <button class="eval-btn" id="evalBtn"><i class="fas fa-file-signature"></i> Free Evaluation</button>
@@ -606,13 +640,11 @@
           <textarea name="message" rows="3" placeholder="Message" required></textarea>
           <button type="submit">Submit</button>
         </form>
-        <div style="margin-top:2rem;">
-        </div>
       </div>
     </div>
   </main>
 
-  <!-- FOOTER with bigger logo -->
+  <!-- FOOTER (updated links) -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-logo-area">
@@ -632,12 +664,15 @@
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="about.html">About AMSSA</a></li>
-          <li><a href="#services-section">Our Services</a></li>
-          <li><a href="operations.html">Operations</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#services-section">Areas of Work</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="library.html">Library</a></li>
+          <li><a href="media-news.html">Media & News</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="library.html">Library, News & Media</a></li>
-          <li><a href="#contact-section">Contact</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="#contact-section">Contact Us</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -685,7 +720,7 @@
         setInterval(() => goToTesti(currentTesti + 1), 7000);
       }
 
-      // Partner block sends to contact form
+      // Partner block scroll to contact
       const partnerBlock = document.getElementById('partnerBlock');
       if (partnerBlock) {
         partnerBlock.addEventListener('click', () => {
@@ -706,24 +741,24 @@
       function closeMobileNav() {
         mobileNav.classList.remove('open');
         overlay.classList.remove('show');
-        document.getElementById('mobileSubmenu').classList.remove('show');
+        document.getElementById('mobileResourceSubmenu').classList.remove('show');
       }
 
       if (menuToggle) menuToggle.addEventListener('click', openMobile);
       if (closeMobile) closeMobile.addEventListener('click', closeMobileNav);
       overlay.addEventListener('click', closeMobileNav);
 
-      // Mobile more toggle
-      const mobileMoreToggle = document.getElementById('mobileMoreToggle');
-      const mobileSubmenu = document.getElementById('mobileSubmenu');
-      if (mobileMoreToggle) {
-        mobileMoreToggle.addEventListener('click', (e) => {
+      // Mobile resource toggle
+      const mobileResourceToggle = document.getElementById('mobileResourceToggle');
+      const mobileResourceSubmenu = document.getElementById('mobileResourceSubmenu');
+      if (mobileResourceToggle) {
+        mobileResourceToggle.addEventListener('click', (e) => {
           e.preventDefault();
-          mobileSubmenu.classList.toggle('show');
+          mobileResourceSubmenu.classList.toggle('show');
         });
       }
 
-      // Smooth scroll for service/contact links
+      // Smooth scroll for area of work / contact
       document.querySelectorAll('a[href="#services-section"]').forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
@@ -740,30 +775,21 @@
         });
       });
 
-      // Desktop dropdown: click only (no hover)
-      const moreBtn = document.getElementById('moreBtn');
-      const dropdownContent = document.getElementById('dropdownContent');
-      if (moreBtn && dropdownContent) {
-        moreBtn.addEventListener('click', (e) => {
+      // Desktop Resource dropdown (click only)
+      const resourceBtn = document.getElementById('resourceBtn');
+      const resourceContent = document.getElementById('resourceContent');
+      if (resourceBtn && resourceContent) {
+        resourceBtn.addEventListener('click', (e) => {
           e.stopPropagation();
-          dropdownContent.classList.toggle('show');
+          resourceContent.classList.toggle('show');
         });
-        // Close when clicking outside
         document.addEventListener('click', (e) => {
-          if (!moreBtn.contains(e.target) && !dropdownContent.contains(e.target)) {
-            dropdownContent.classList.remove('show');
+          if (!resourceBtn.contains(e.target) && !resourceContent.contains(e.target)) {
+            resourceContent.classList.remove('show');
           }
         });
       }
     })();
   </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
