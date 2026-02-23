@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMSSA · Our Team</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Font (Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f9ff;
+      color: #102b41;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ===== GLASS NAV (same as homepage) ===== */
+    .glass-nav {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 60;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0.5rem 2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .logo-image a {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .logo-avif {
+      width: 80px;
+      height: 100px;
+      border-radius: 5px;
+      background-image: url('amssalogo.avif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0 10px 20px -8px #e0dfdf;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 2.2rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(140deg, #0d314b, #285f8b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      font-weight: 550;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #0c334e;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover {
+      color: #1d6190;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background: white;
+      padding: 0.5rem 1.6rem;
+      border-radius: 40px;
+      font-weight: 600;
+      box-shadow: 0 8px 14px -10px #0b2f48;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dropbtn:hover {
+      background: #f0f7ff;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 45px;
+      background: white;
+      min-width: 240px;
+      border-radius: 24px;
+      box-shadow: 0 20px 30px -12px #082436;
+      z-index: 70;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .dropdown-content.show {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: #0b314b;
+      padding: 0.9rem 1.5rem;
+      text-decoration: none;
+      display: block;
+      font-weight: 500;
+      border-bottom: 1px solid #e9f0f8;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+      background: #e3f0fd;
+      color: #005c99;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: #0c334e;
+      cursor: pointer;
+    }
+
+    /* mobile nav (simplified, same style) */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      left: -320px;
+      width: 280px;
+      height: 100vh;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(12px);
+      z-index: 200;
+      padding: 2rem 1.5rem;
+      box-shadow: 4px 0 30px -10px #031d30;
+      transition: left 0.3s ease;
+      border-right: 2px solid white;
+    }
+
+    .mobile-nav.open {
+      left: 0;
+    }
+
+    .mobile-nav-close {
+      text-align: right;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      cursor: pointer;
+      color: #0c334e;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .mobile-nav-links a {
+      text-decoration: none;
+      color: #0c334e;
+      font-size: 1.3rem;
+      font-weight: 500;
+      border-bottom: 1px solid #c6dcf2;
+      padding-bottom: 0.6rem;
+    }
+
+    .dropdown-mobile .drop-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #0c334e;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .mobile-submenu {
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-left: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .mobile-submenu.show {
+      display: flex;
+    }
+
+    .mobile-submenu a {
+      padding-left: 0.5rem;
+      font-size: 1.1rem;
+      border-bottom: none;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.3);
+      z-index: 150;
+    }
+
+    .overlay.show {
+      display: block;
+    }
+
+    /* ===== OUR TEAM HERO ===== */
+    .team-hero {
+      background: linear-gradient(135deg, #0b2b43 0%, #163f5c 100%);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-bottom-left-radius: 4rem;
+      border-bottom-right-radius: 4rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 30px 40px -25px #0c334e;
+    }
+
+    .team-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .team-hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* ===== TEAM GRID WITH REVEAL ANIMATION ===== */
+    .team-grid-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 2rem 5rem;
+    }
+
+    .section-subtitle {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #0a2d47;
+      border-left: 8px solid #246792;
+      padding-left: 1.5rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    /* base card style + hidden for animation */
+    .team-card {
+      background: white;
+      border-radius: 2.5rem;
+      padding: 2rem 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 25px 35px -20px #153e58;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      border: 1px solid rgba(255,255,255,0.7);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s;
+    }
+
+    .team-card.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .team-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 35px 45px -20px #0f3f60;
+      border-color: #a0c9f0;
+    }
+
+    .team-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      background-size: cover;
+      background-position: center;
+      border: 5px solid white;
+      box-shadow: 0 15px 25px -12px #09273b;
+      transition: transform 0.3s;
+    }
+
+    .team-card:hover .team-img {
+      transform: scale(1.05);
+    }
+
+    .img-magnus { background-image: url('images/magnus.avif'); }
+    .img-karen { background-image: url('images/karen.avif'); }
+    .img-viceadm { background-image: url('images/viceadm.jpg'); }
+    .img-amina { background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&auto=format'); }
+    .img-kofi { background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format'); }
+    .img-fatou { background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format'); }
+
+    .team-card h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: #0f3a5a;
+    }
+
+    .team-card .role {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #246792;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.3px;
+    }
+
+    .team-card .expertise {
+      color: #25557a;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      background: #ebf3fa;
+      padding: 0.4rem 1rem;
+      border-radius: 60px;
+      display: inline-block;
+    }
+
+    .team-card .bio-short {
+      color: #2e4d6b;
+      margin-bottom: 1.8rem;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .card-social {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .card-social a {
+      width: 42px;
+      height: 42px;
+      background: #e4eef9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1a4a73;
+      font-size: 1.3rem;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+
+    .card-social a:hover {
+      background: #1a4a73;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* values / extra brief section */
+    .team-values {
+      background: #d9e9fb;
+      border-radius: 4rem;
+      padding: 3rem 2.5rem;
+      margin: 4rem auto;
+      max-width: 1100px;
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
+      text-align: center;
+    }
+
+    .team-values h3 {
+      font-size: 2.2rem;
+      color: #0b2f48;
+      margin-bottom: 2rem;
+    }
+
+    .values-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    .value-item {
+      flex: 1 1 180px;
+      background: white;
+      border-radius: 3rem;
+      padding: 2rem 1rem;
+      box-shadow: 0 10px 20px -10px #153e58;
+    }
+
+    .value-item i {
+      font-size: 2.5rem;
+      color: #1f6da0;
+      margin-bottom: 1rem;
+    }
+
+    .value-item h4 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: #0c2f4b;
+    }
+
+    /* footer same as home */
+    .site-footer {
+      background: #092538;
+      color: #e0edfa;
+      padding: 3rem 2rem 1.5rem;
+      border-radius: 4rem 4rem 0 0;
+      margin-top: 3rem;
+    }
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+    .footer-logo-area { display: flex; flex-direction: column; align-items: flex-start; }
+    .footer-logo a { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem; text-decoration: none; }
+    .footer-logo .logo-avif-small {
+      width: 80px; height: 100px; border-radius: 5px;
+      background-image: url('amssalogo.avif');
+      background-size: cover; background-position: center;
+    }
+    .footer-logo span { font-size: 2rem; font-weight: 700; color: white; }
+    .footer-about { font-size: 0.95rem; color: #bdd8f2; margin-bottom: 1.2rem; }
+    .footer-social a { color: #c7defa; font-size: 1.3rem; margin-right: 1rem; }
+    .footer-links h4, .footer-contact h4 { font-size: 1.3rem; color: white; margin-bottom: 1.2rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 0.7rem; }
+    .footer-links a { text-decoration: none; color: #bdd8f2; }
+    .footer-links a:hover { color: white; }
+    .footer-contact p { margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.8rem; color: #bdd8f2; }
+    .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid #1f4767; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .footer-container { grid-template-columns: 1fr; }
+      .team-hero h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- overlay & mobile nav (same as homepage) -->
+  <div class="overlay" id="overlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-close" id="closeMobile"><i class="fas fa-times"></i></div>
+    <div class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#services-section">Areas of Work</a>
+      <a href="team.html">Our Team</a>
+      <div class="dropdown-mobile">
+        <span class="drop-title" id="mobileResourceToggle"><i class="fas fa-folder-open"></i> Resource <i class="fas fa-chevron-down"></i></span>
+        <div class="mobile-submenu" id="mobileResourceSubmenu">
+          <a href="library.html">Library</a>
+          <a href="media-news.html">Media & News</a>
+          <a href="projects.html">Projects</a>
+          <a href="membership.html">Membership</a>
+        </div>
+      </div>
+      <a href="index.html#contact-section">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- desktop nav (identical to home) -->
+  <div class="glass-nav">
+    <nav class="container">
+      <div class="logo-image">
+        <a href="index.html">
+          <div class="logo-avif"></div>
+          <span class="logo-text">AMSSA</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#services-section">Areas of Work</a>
+        <a href="team.html">Our Team</a>
+        <div class="dropdown" id="resourceDropdown">
+          <button class="dropbtn" id="resourceBtn"><i class="fas fa-folder-open"></i> Resource <i class="fas fa-chevron-down"></i></button>
+          <div class="dropdown-content" id="resourceContent">
+            <a href="library.html"><i class="fas fa-book"></i> Library</a>
+            <a href="media-news.html"><i class="fas fa-newspaper"></i> Media & News</a>
+            <a href="projects.html"><i class="fas fa-hard-hat"></i> Projects</a>
+            <a href="membership.html"><i class="fas fa-user-plus"></i> Membership</a>
+          </div>
+        </div>
+        <a href="index.html#contact-section">Contact Us</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    </nav>
+  </div>
+
+  <!-- OUR TEAM HERO -->
+  <section class="team-hero">
+    <h1>Meet Our Team</h1>
+    <p>Dedicated professionals driving maritime safety and security across Africa</p>
+  </section>
+
+  <!-- TEAM GRID with scroll reveal animation -->
+  <section class="team-grid-section">
+    <h2 class="section-subtitle">Executive & Leadership</h2>
+    <div class="team-grid">
+      <!-- card 1 -->
+      <div class="team-card">
+        <div class="team-img img-magnus"></div>
+        <h3>Magnus Addico</h3>
+        <div class="role">President</div>
+        <span class="expertise">Strategy & Governance</span>
+        <p class="bio-short">Over 25 years of maritime policy leadership, formerly with IMO. Leads AMSSA vision and African partnerships.</p>
+        <div class="card-social">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div class="team-card">
+        <div class="team-img img-karen"></div>
+        <h3>Dr Karen Sumser Lupson</h3>
+        <div class="role">Commissioner</div>
+        <span class="expertise">Legal & Policy</span>
+        <p class="bio-short">International maritime law expert, advising on regulatory frameworks for 15+ African nations.</p>
+        <div class="card-social">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <!-- card 3 -->
+      <div class="team-card">
+        <div class="team-img img-viceadm"></div>
+        <h3>Vice Admiral (Rtd) Issah Adam Yakubu</h3>
+        <div class="role">Executive Director</div>
+        <span class="expertise">Naval Operations</span>
+        <p class="bio-short">Former Chief of Naval Staff; directs operational readiness and coastguard capacity building.</p>
+        <div class="card-social">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <!-- card 4 -->
+      <div class="team-card">
+        <div class="team-img img-amina" style="background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&auto=format');"></div>
+        <h3>Amina Nkosi</h3>
+        <div class="role">Director, Data & Analysis</div>
+        <span class="expertise">Maritime Data</span>
+        <p class="bio-short">Leads the data procurement and knowledge analysis unit, ensuring open access for member states.</p>
+        <div class="card-social">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <!-- card 5 -->
+      <div class="team-card">
+        <div class="team-img img-kofi" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format');"></div>
+        <h3>Kofi Annan-Drako</h3>
+        <div class="role">Head of Technology</div>
+        <span class="expertise">Maritime Tech</span>
+        <p class="bio-short">Drives technology centralization and innovation for surveillance and communication systems.</p>
+        <div class="card-social">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <!-- card 6 -->
+      <div class="team-card">
+        <div class="team-img img-fatou" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format');"></div>
+        <h3>Fatou Seck</h3>
+        <div class="role">Capacity Building Lead</div>
+        <span class="expertise">Training & Development</span>
+        <p class="bio-short">Designs programs for coastguards and maritime administrations across 22 African countries.</p>
+        <div class="card-social">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRIEF VALUES / ADDITIONAL FEATURE -->
+    <div class="team-values">
+      <h3>Driven by collaboration & excellence</h3>
+      <div class="values-grid">
+        <div class="value-item">
+          <i class="fas fa-handshake"></i>
+          <h4>20+ Nations</h4>
+          <p>Partner states across Africa</p>
+        </div>
+        <div class="value-item">
+          <i class="fas fa-clock"></i>
+          <h4>40+ Years</h4>
+          <p>Combined maritime experience</p>
+        </div>
+        <div class="value-item">
+          <i class="fas fa-globe"></i>
+          <h4>Multilingual</h4>
+          <p>English, French, Portuguese</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (identical to home) -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-logo-area">
+        <div class="footer-logo">
+          <a href="index.html">
+            <div class="logo-avif-small"></div>
+            <span>AMSSA</span>
+          </a>
+        </div>
+        <p class="footer-about">African Maritime Safety and Security Agency – protecting the African maritime legacy through data, technology and collaboration.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#services-section">Areas of Work</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="library.html">Library</a></li>
+          <li><a href="media-news.html">Media & News</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="membership.html">Membership</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-map-pin"></i> GL-108-0038, Accra, Ghana</p>
+        <p><i class="fas fa-phone-alt"></i> +233 50 4953400</p>
+        <p><i class="fas fa-envelope"></i> info@amssa.co</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 AMSSA – African Maritime Safety and Security Agency.</p></div>
+  </footer>
+
+  <!-- JavaScript for mobile, dropdown, and SCROLL REVEAL animation -->
+  <script>
+    (function() {
+      // ----- MOBILE MENU (reused) -----
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const closeMobile = document.getElementById('closeMobile');
+      const overlay = document.getElementById('overlay');
+      const mobileResourceToggle = document.getElementById('mobileResourceToggle');
+      const mobileSubmenu = document.getElementById('mobileResourceSubmenu');
+
+      function openMobile() { mobileNav.classList.add('open'); overlay.classList.add('show'); }
+      function closeMobileNav() { 
+        mobileNav.classList.remove('open'); 
+        overlay.classList.remove('show'); 
+        if (mobileSubmenu) mobileSubmenu.classList.remove('show');
+      }
+      if (menuToggle) menuToggle.addEventListener('click', openMobile);
+      if (closeMobile) closeMobile.addEventListener('click', closeMobileNav);
+      if (overlay) overlay.addEventListener('click', closeMobileNav);
+
+      if (mobileResourceToggle) {
+        mobileResourceToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          mobileSubmenu.classList.toggle('show');
+        });
+      }
+
+      // desktop resource dropdown
+      const resourceBtn = document.getElementById('resourceBtn');
+      const resourceContent = document.getElementById('resourceContent');
+      if (resourceBtn && resourceContent) {
+        resourceBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          resourceContent.classList.toggle('show');
+        });
+        document.addEventListener('click', (e) => {
+          if (!resourceBtn.contains(e.target) && !resourceContent.contains(e.target)) {
+            resourceContent.classList.remove('show');
+          }
+        });
+      }
+
+      // ----- SCROLL REVEAL ANIMATION for team cards -----
+      const cards = document.querySelectorAll('.team-card');
+      
+      function checkReveal() {
+        const windowHeight = window.innerHeight;
+        const revealThreshold = 120; // pixels from bottom
+        cards.forEach(card => {
+          const rect = card.getBoundingClientRect();
+          // if card enters viewport (top above bottom edge + threshold)
+          if (rect.top < windowHeight - revealThreshold) {
+            card.classList.add('reveal');
+          } else {
+            // optional: remove class if you want re-hidden, but we keep revealed
+            // card.classList.remove('reveal'); // (commented for permanent once)
+          }
+        });
+      }
+
+      // run on load and scroll, and also after a tiny delay for initial positions
+      window.addEventListener('load', checkReveal);
+      window.addEventListener('scroll', checkReveal);
+      window.addEventListener('resize', checkReveal);
+      checkReveal(); // immediate
+
+      // (optional) also set reveal for any card that might already be visible
+    })();
+  </script>
+</body>
+</html>
