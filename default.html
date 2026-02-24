@@ -294,7 +294,7 @@
       font-size: 1.7rem;
       transition: 0.2s;
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.7);
     }
 
     .social-btn:hover {
@@ -493,7 +493,7 @@
   <div class="mobile-nav" id="mobileNav">
     <div class="mobile-nav-close" id="closeMobile"><i class="fas fa-times"></i></div>
     <div class="mobile-nav-links">
-      <a href="default.html">Home</a>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="#services-section">Areas of Work</a>  
       <a href="team.html">Our Team</a>               
@@ -515,14 +515,14 @@
   <div class="glass-nav">
     <nav class="container">
       <div class="logo-image">
-        <a href="default.html">
+        <a href="index.html">
           <div class="logo-avif" role="img" aria-label="AMSSA logo"></div>
           <span class="logo-text">AMSSA</span>
         </a>
       </div>
 
       <div class="nav-links">
-        <a href="default.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="#services-section">Areas of Work</a>  
         <a href="team.html">Our Team</a>               
@@ -530,9 +530,9 @@
         <div class="dropdown" id="resourceDropdown">
           <button class="dropbtn" id="resourceBtn"><i class="fas fa-folder-open"></i> Resource <i class="fas fa-chevron-down"></i></button>
           <div class="dropdown-content" id="resourceContent">
-            <a href="library.html"><i class="fas fa-book"></i> Library </a>
-            <a href="media-news.html"><i class="fas fa-newspaper"></i> Media & News </a>
-            <a href="projects.html"><i class="fas fa-hard-hat"></i> Projects </a>
+            <a href="library.html"><i class="fas fa-book"></i> Library – PDFs, reports, publications</a>
+            <a href="media-news.html"><i class="fas fa-newspaper"></i> Media & News – articles, photos, videos</a>
+            <a href="projects.html"><i class="fas fa-hard-hat"></i> Projects – current & past</a>
             <a href="membership.html"><i class="fas fa-user-plus"></i> Membership</a>
           </div>
         </div>
@@ -546,22 +546,37 @@
   <!-- ========== SLIDESHOW WITH 7 SLIDES (updated from activities) ========== -->
   <div class="hero-slideshow">
     <div class="slide-container" id="slideContainer">
-      <!-- slide 1 -->
+      <!-- slide 1 - existing -->
       <div class="slide active" style="background-image: url('amssa.jpg');">
         <div class="slide-caption"><h1>African Maritime Safety and Security Agency</h1><p>Protect the African Maritime Legacy for Future Generations</p></div>
       </div>
-      <!-- slide 2 -->
+      <!-- slide 2 (from point 1: CEMZA, unified jurisdiction) -->
+      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=2070&auto=format&fit=crop');">
+        <div class="slide-caption"><h1>Combined Exclusive Maritime Zone of Africa (CEMZA)</h1><p>Unified maritime jurisdiction & African‑centered leadership</p></div>
+      </div>
+      <!-- slide 3 (point 2: Maritime safety, UNCLOS, IMO) -->
+      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1591025207163-942350e47db4?q=80&w=1974&auto=format&fit=crop');">
+        <div class="slide-caption"><h1>Uphold Maritime Safety</h1><p>UNCLOS, IMO standards (SOLAS, COLREG, ISM, STCW) • SDG 9 & 14</p></div>
+      </div>
+      <!-- slide 4 (point 3: Combat international crime, IUU fishing, trafficking) -->
+      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&auto=format');">
+        <div class="slide-caption"><h1>Strengthen Maritime Security</h1><p>Combat IUU fishing, human trafficking, wildlife smuggling • ISPS, SUA protocols</p></div>
+      </div>
+      <!-- slide 5 (point 4: Africa‑led collaboration against piracy) -->
       <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&auto=format');">
         <div class="slide-caption"><h1>Africa‑Led Maritime Safety & Security</h1><p>Collaborative training, intelligence sharing, anti‑piracy (UNCLOS arts. 100‑105)</p></div>
       </div>
-      <!-- slide 3 -->
+      <!-- slide 6 (point 5: Blue economy, climate resilience, youth/women) -->
       <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1621451537084-4822a1c6459a?w=500&auto=format');">
-        <div class="slide-caption"><h1>Blue Economy & Climate Resilience</h1><p>Inclusive growth • fisheries • eco‑tourism • clean energy </p></div>
+        <div class="slide-caption"><h1>Blue Economy & Climate Resilience</h1><p>Inclusive growth • fisheries • eco‑tourism • clean energy • SDG 8,13,14</p></div>
       </div>
-      <!-- slide 4 -->
+      <!-- slide 7 (point 6+7: Governance, legal harmonisation & capacity building) -->
       <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop');">
         <div class="slide-caption"><h1>Governance • Capacity • Education</h1><p>Harmonised maritime laws, training, open‑access data, professional development</p></div>
       </div>
+    </div>
+    <div class="slide-indicators" id="slideIndicators">
+      <!-- dynamically filled via JS for 7 slides -->
     </div>
   </div>
 
@@ -616,7 +631,7 @@
     </div>
     <!-- Membership (moved under Resource) – extra callout -->
     <div class="reveal-section" style="margin-top: -1.2rem; margin-bottom: 2.5rem; text-align: left;">
-      <a href="membership.html" style="background: #0b2b43; color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 60px; display: inline-flex; align-items: center; gap: 0.8rem; font-weight: 600;"><i class="fas fa-user-plus"></i> Membership </a>
+      <a href="membership.html" style="background: #0b2b43; color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 60px; display: inline-flex; align-items: center; gap: 0.8rem; font-weight: 600;"><i class="fas fa-user-plus"></i> Membership (under Resource)</a>
     </div>
 
     <!-- Partner block -->
@@ -658,7 +673,7 @@
     <div class="footer-container">
       <div class="footer-logo-area">
         <div class="footer-logo">
-          <a href="default.html">
+          <a href="index.html">
             <div class="logo-avif-small"></div>
             <span>AMSSA</span>
           </a>
@@ -673,7 +688,7 @@
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="default.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="#services-section">Areas of Work</a></li>
           <li><a href="team.html">Our Team</a></li>
@@ -829,4 +844,3 @@
   </script>
 </body>
 </html>
-
