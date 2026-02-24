@@ -294,7 +294,7 @@
       font-size: 1.7rem;
       transition: 0.2s;
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.5);
     }
 
     .social-btn:hover {
@@ -303,23 +303,42 @@
       transform: scale(1.15);
     }
 
-    /* slideshow */
+    /* slideshow - updated for 7 slides (indicators dynamic) */
     .hero-slideshow {
       width: 100%;
-      height: 70vh;
+      height: 75vh;
       position: relative;
       overflow: hidden;
       background: #0b263b;
     }
     .slide-container { width: 100%; height: 100%; position: relative; }
-    .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.2s ease-in-out; display: flex; align-items: flex-end; justify-content: flex-start; padding: 2rem 4rem; }
+    .slide { 
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+      background-size: cover; background-position: center; 
+      opacity: 0; transition: opacity 1.2s ease-in-out; 
+      display: flex; align-items: flex-end; justify-content: flex-start; 
+      padding: 2rem 4rem; 
+    }
     .slide.active { opacity: 1; z-index: 10; }
-    .slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(0,30,50,0.6) 0%, rgba(0,30,50,0.2) 60%); z-index: 1; }
-    .slide-caption { position: relative; z-index: 20; max-width: 650px; color: white; text-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-    .slide-caption h1 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .slide-caption p { font-size: 1.2rem; opacity: 0.95; }
-    .slide-indicators { position: absolute; bottom: 25px; right: 40px; z-index: 30; display: flex; gap: 12px; }
-    .indicator { width: 14px; height: 14px; background: rgba(255,255,255,0.5); border-radius: 30px; cursor: pointer; transition: 0.2s; }
+    .slide::after { 
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+      background: linear-gradient(90deg, rgba(0,30,50,0.7) 0%, rgba(0,30,50,0.3) 70%); 
+      z-index: 1; 
+    }
+    .slide-caption { 
+      position: relative; z-index: 20; max-width: 750px; color: white; 
+      text-shadow: 0 4px 12px rgba(0,0,0,0.5); 
+    }
+    .slide-caption h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.2; }
+    .slide-caption p { font-size: 1.3rem; opacity: 0.95; }
+    .slide-indicators { 
+      position: absolute; bottom: 25px; right: 40px; z-index: 30; 
+      display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; 
+    }
+    .indicator { 
+      width: 14px; height: 14px; background: rgba(255,255,255,0.5); 
+      border-radius: 30px; cursor: pointer; transition: 0.2s; 
+    }
     .indicator.active { background: white; width: 42px; }
 
     .mission-fullwidth { width: 100%; background: rgba(100 143 175 / 20%); backdrop-filter: blur(4px); border-top: 3px double #bfd9f0; border-bottom: 3px double #bfd9f0; padding: 3rem 0; box-shadow: inset 0 8px 12px -8px rgba(0,30,50,0.2), inset 0 -8px 12px -8px rgba(0,30,50,0.2); }
@@ -474,7 +493,7 @@
   <div class="mobile-nav" id="mobileNav">
     <div class="mobile-nav-close" id="closeMobile"><i class="fas fa-times"></i></div>
     <div class="mobile-nav-links">
-      <a href="index.html">Home</a>
+      <a href="default.html">Home</a>
       <a href="about.html">About</a>
       <a href="#services-section">Areas of Work</a>  
       <a href="team.html">Our Team</a>               
@@ -496,14 +515,14 @@
   <div class="glass-nav">
     <nav class="container">
       <div class="logo-image">
-        <a href="index.html">
+        <a href="default.html">
           <div class="logo-avif" role="img" aria-label="AMSSA logo"></div>
           <span class="logo-text">AMSSA</span>
         </a>
       </div>
 
       <div class="nav-links">
-        <a href="index.html">Home</a>
+        <a href="default.html">Home</a>
         <a href="about.html">About</a>
         <a href="#services-section">Areas of Work</a>  
         <a href="team.html">Our Team</a>               
@@ -511,9 +530,9 @@
         <div class="dropdown" id="resourceDropdown">
           <button class="dropbtn" id="resourceBtn"><i class="fas fa-folder-open"></i> Resource <i class="fas fa-chevron-down"></i></button>
           <div class="dropdown-content" id="resourceContent">
-            <a href="library.html"><i class="fas fa-book"></i> Library – PDFs, reports, publications</a>
-            <a href="media-news.html"><i class="fas fa-newspaper"></i> Media & News – articles, photos, videos</a>
-            <a href="projects.html"><i class="fas fa-hard-hat"></i> Projects – current & past</a>
+            <a href="library.html"><i class="fas fa-book"></i> Library </a>
+            <a href="media-news.html"><i class="fas fa-newspaper"></i> Media & News </a>
+            <a href="projects.html"><i class="fas fa-hard-hat"></i> Projects </a>
             <a href="membership.html"><i class="fas fa-user-plus"></i> Membership</a>
           </div>
         </div>
@@ -524,20 +543,29 @@
     </nav>
   </div>
 
-  <!-- SLIDESHOW (no animation needed for hero) -->
+  <!-- ========== SLIDESHOW WITH 7 SLIDES (updated from activities) ========== -->
   <div class="hero-slideshow">
-    <div class="slide-container">
+    <div class="slide-container" id="slideContainer">
+      <!-- slide 1 -->
       <div class="slide active" style="background-image: url('amssa.jpg');">
         <div class="slide-caption"><h1>African Maritime Safety and Security Agency</h1><p>Protect the African Maritime Legacy for Future Generations</p></div>
       </div>
-      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=2070&auto=format&fit=crop');">
-        <div class="slide-caption"><h1>Data · Technology · Knowledge</h1><p>Procure, centralise, and analyse data for African nations</p></div>
+      <!-- slide 2 -->
+      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&auto=format');">
+        <div class="slide-caption"><h1>Africa‑Led Maritime Safety & Security</h1><p>Collaborative training, intelligence sharing, anti‑piracy (UNCLOS arts. 100‑105)</p></div>
       </div>
-      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1591025207163-942350e47db4?q=80&w=1974&auto=format&fit=crop');">
-        <div class="slide-caption"><h1>Unity & Interdependence</h1><p>Guided by human rights, democracy, and rule of law</p></div>
+      <!-- slide 3 -->
+      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1621451537084-4822a1c6459a?w=500&auto=format');">
+        <div class="slide-caption"><h1>Blue Economy & Climate Resilience</h1><p>Inclusive growth • fisheries • eco‑tourism • clean energy </p></div>
+      </div>
+      <!-- slide 4 -->
+      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop');">
+        <div class="slide-caption"><h1>Governance • Capacity • Education</h1><p>Harmonised maritime laws, training, open‑access data, professional development</p></div>
       </div>
     </div>
-    <div class="slide-indicators"><span class="indicator active" data-index="0"></span><span class="indicator" data-index="1"></span><span class="indicator" data-index="2"></span></div>
+    <div class="slide-indicators" id="slideIndicators">
+      <!-- dynamically filled via JS for 7 slides -->
+    </div>
   </div>
 
   <!-- MISSION FULLWIDTH (reveal on scroll) -->
@@ -633,7 +661,7 @@
     <div class="footer-container">
       <div class="footer-logo-area">
         <div class="footer-logo">
-          <a href="index.html">
+          <a href="default.html">
             <div class="logo-avif-small"></div>
             <span>AMSSA</span>
           </a>
@@ -648,7 +676,7 @@
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="default.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="#services-section">Areas of Work</a></li>
           <li><a href="team.html">Our Team</a></li>
@@ -672,11 +700,22 @@
 
   <script>
     (function() {
-      // Slideshow
+      // Slideshow with dynamic indicators for 7 slides
       const slides = document.querySelectorAll('.slide');
+      const indicatorsContainer = document.getElementById('slideIndicators');
+      
+      // Create indicators based on slide count
+      for (let i = 0; i < slides.length; i++) {
+        const span = document.createElement('span');
+        span.className = 'indicator' + (i === 0 ? ' active' : '');
+        span.setAttribute('data-index', i);
+        indicatorsContainer.appendChild(span);
+      }
+      
       const indicators = document.querySelectorAll('.indicator');
       let currentSlide = 0;
       const slideCount = slides.length;
+      
       function showSlide(index) {
         if (index >= slideCount) index = 0;
         if (index < 0) index = slideCount - 1;
@@ -684,7 +723,11 @@
         indicators.forEach((ind, i) => ind.classList.toggle('active', i === index));
         currentSlide = index;
       }
-      indicators.forEach((ind, idx) => ind.addEventListener('click', () => showSlide(idx)));
+      
+      indicators.forEach((ind, idx) => {
+        ind.addEventListener('click', () => showSlide(idx));
+      });
+      
       setInterval(() => showSlide(currentSlide + 1), 6000);
 
       // Testimonial slider
@@ -780,10 +823,9 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('revealed');
-            // Optional: keep observing if you want to remove class when out-of-view, but we keep visible
           }
         });
-      }, { threshold: 0.15, rootMargin: "0px 0px -30px 0px" }); // trigger when 15% visible
+      }, { threshold: 0.15, rootMargin: "0px 0px -30px 0px" });
 
       revealElements.forEach(el => observer.observe(el));
     })();
