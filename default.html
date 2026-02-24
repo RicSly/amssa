@@ -42,7 +42,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.5);
       position: sticky;
       top: 0;
-      z-index: 60;
+      z-default: 60;
     }
 
     .container {
@@ -140,7 +140,7 @@
       min-width: 240px;
       border-radius: 24px;
       box-shadow: 0 20px 30px -12px #082436;
-      z-index: 70;
+      z-default: 70;
       overflow: hidden;
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255,255,255,0.5);
@@ -187,7 +187,7 @@
       height: 100vh;
       background: rgba(255,255,255,0.98);
       backdrop-filter: blur(12px);
-      z-index: 200;
+      z-default: 200;
       padding: 2rem 1.5rem;
       box-shadow: 4px 0 30px -10px #031d30;
       transition: left 0.3s ease;
@@ -262,7 +262,7 @@
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0,0,0,0.3);
-      z-index: 150;
+      z-default: 150;
     }
 
     .overlay.show {
@@ -278,7 +278,7 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
-      z-index: 100;
+      z-default: 100;
     }
 
     .social-btn {
@@ -319,20 +319,20 @@
       display: flex; align-items: flex-end; justify-content: flex-start; 
       padding: 2rem 4rem; 
     }
-    .slide.active { opacity: 1; z-index: 10; }
+    .slide.active { opacity: 1; z-default: 10; }
     .slide::after { 
       content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
       background: linear-gradient(90deg, rgba(0,30,50,0.7) 0%, rgba(0,30,50,0.3) 70%); 
-      z-index: 1; 
+      z-default: 1; 
     }
     .slide-caption { 
-      position: relative; z-index: 20; max-width: 750px; color: white; 
+      position: relative; z-default: 20; max-width: 750px; color: white; 
       text-shadow: 0 4px 12px rgba(0,0,0,0.5); 
     }
     .slide-caption h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.2; }
     .slide-caption p { font-size: 1.3rem; opacity: 0.95; }
     .slide-indicators { 
-      position: absolute; bottom: 25px; right: 40px; z-index: 30; 
+      position: absolute; bottom: 25px; right: 40px; z-default: 30; 
       display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; 
     }
     .indicator { 
@@ -493,7 +493,7 @@
   <div class="mobile-nav" id="mobileNav">
     <div class="mobile-nav-close" id="closeMobile"><i class="fas fa-times"></i></div>
     <div class="mobile-nav-links">
-      <a href="index.html">Home</a>
+      <a href="default.html">Home</a>
       <a href="about.html">About</a>
       <a href="#services-section">Areas of Work</a>  
       <a href="team.html">Our Team</a>               
@@ -515,14 +515,14 @@
   <div class="glass-nav">
     <nav class="container">
       <div class="logo-image">
-        <a href="index.html">
+        <a href="default.html">
           <div class="logo-avif" role="img" aria-label="AMSSA logo"></div>
           <span class="logo-text">AMSSA</span>
         </a>
       </div>
 
       <div class="nav-links">
-        <a href="index.html">Home</a>
+        <a href="default.html">Home</a>
         <a href="about.html">About</a>
         <a href="#services-section">Areas of Work</a>  
         <a href="team.html">Our Team</a>               
@@ -550,33 +550,22 @@
       <div class="slide active" style="background-image: url('amssa.jpg');">
         <div class="slide-caption"><h1>African Maritime Safety and Security Agency</h1><p>Protect the African Maritime Legacy for Future Generations</p></div>
       </div>
-      <!-- slide 2 (from point 1: CEMZA, unified jurisdiction) -->
-      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=2070&auto=format&fit=crop');">
-        <div class="slide-caption"><h1>Combined Exclusive Maritime Zone of Africa (CEMZA)</h1><p>Unified maritime jurisdiction & African‑centered leadership</p></div>
-      </div>
-      <!-- slide 3 (point 2: Maritime safety, UNCLOS, IMO) -->
-      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1591025207163-942350e47db4?q=80&w=1974&auto=format&fit=crop');">
-        <div class="slide-caption"><h1>Uphold Maritime Safety</h1><p>UNCLOS, IMO standards (SOLAS, COLREG, ISM, STCW) • SDG 9 & 14</p></div>
-      </div>
-      <!-- slide 4 (point 3: Combat international crime, IUU fishing, trafficking) -->
+        <!-- slide 2 -->
       <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&auto=format');">
         <div class="slide-caption"><h1>Strengthen Maritime Security</h1><p>Combat IUU fishing, human trafficking, wildlife smuggling • ISPS, SUA protocols</p></div>
       </div>
-      <!-- slide 5 (point 4: Africa‑led collaboration against piracy) -->
+      <!-- slide 3 -->
       <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&auto=format');">
         <div class="slide-caption"><h1>Africa‑Led Maritime Safety & Security</h1><p>Collaborative training, intelligence sharing, anti‑piracy (UNCLOS arts. 100‑105)</p></div>
       </div>
-      <!-- slide 6 (point 5: Blue economy, climate resilience, youth/women) -->
+      <!-- slide 4 -->
       <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1621451537084-4822a1c6459a?w=500&auto=format');">
-        <div class="slide-caption"><h1>Blue Economy & Climate Resilience</h1><p>Inclusive growth • fisheries • eco‑tourism • clean energy • SDG 8,13,14</p></div>
+        <div class="slide-caption"><h1>Blue Economy & Climate Resilience</h1><p>Inclusive growth • fisheries • eco‑tourism • clean energy </p></div>
       </div>
-      <!-- slide 7 (point 6+7: Governance, legal harmonisation & capacity building) -->
+      <!-- slide 5 -->
       <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop');">
         <div class="slide-caption"><h1>Governance • Capacity • Education</h1><p>Harmonised maritime laws, training, open‑access data, professional development</p></div>
       </div>
-    </div>
-    <div class="slide-indicators" id="slideIndicators">
-      <!-- dynamically filled via JS for 7 slides -->
     </div>
   </div>
 
@@ -631,7 +620,7 @@
     </div>
     <!-- Membership (moved under Resource) – extra callout -->
     <div class="reveal-section" style="margin-top: -1.2rem; margin-bottom: 2.5rem; text-align: left;">
-      <a href="membership.html" style="background: #0b2b43; color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 60px; display: inline-flex; align-items: center; gap: 0.8rem; font-weight: 600;"><i class="fas fa-user-plus"></i> Membership (under Resource)</a>
+      <a href="membership.html" style="background: #0b2b43; color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 60px; display: inline-flex; align-items: center; gap: 0.8rem; font-weight: 600;"><i class="fas fa-user-plus"></i> Membership </a>
     </div>
 
     <!-- Partner block -->
@@ -673,7 +662,7 @@
     <div class="footer-container">
       <div class="footer-logo-area">
         <div class="footer-logo">
-          <a href="index.html">
+          <a href="default.html">
             <div class="logo-avif-small"></div>
             <span>AMSSA</span>
           </a>
@@ -688,7 +677,7 @@
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="default.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="#services-section">Areas of Work</a></li>
           <li><a href="team.html">Our Team</a></li>
@@ -844,3 +833,4 @@
   </script>
 </body>
 </html>
+
